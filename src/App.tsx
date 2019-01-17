@@ -18,17 +18,18 @@ class App extends React.Component {
         }
     }
 
-    public getClick(e: string) {
+    public getClick(e: any) {
         e = '父组件收到消息' + e;
+        console.log(e);
         this.setState({
-            childrenClick: e
+            childrenClick: e,
         })
     };
 
     public render() {
         return (
             <div className="App">
-                <AppHeader key="header" children={this.state.message}/>
+                <AppHeader key="header" children={this.state.message} childrenClick={this.getClick.bind(this)}/>
                 <AppSideNav/>
             </div>
         );

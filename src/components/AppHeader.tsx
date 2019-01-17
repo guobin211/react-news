@@ -1,7 +1,12 @@
 import * as React from 'react';
 import logo from "../logo.svg";
 
-class AppHeader extends React.Component {
+export interface Props {
+    children: string;
+    childrenClick: any;
+}
+
+class AppHeader extends React.Component<Props, object> {
     public state = {
         onChange: '',
         title: '排序算法',
@@ -9,6 +14,7 @@ class AppHeader extends React.Component {
 
     public selfClick = (e: string) => {
         console.log('self' + e);
+        this.props.childrenClick(e);
     };
 
     public render(): React.ReactNode {
@@ -17,7 +23,7 @@ class AppHeader extends React.Component {
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h3 className="app-title">{this.props.children}</h3>
                 <h4 className="app-title">{this.state.title}</h4>
-                <button type="button" className="btn btn-primary" onClick={() => this.selfClick("自组件发出消息")}>通讯</button>
+                <button type="button" className="btn btn-primary" onClick={() => this.selfClick("子组件发出消息")}>通讯</button>
             </header>
         );
     }
