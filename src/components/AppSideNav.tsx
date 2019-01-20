@@ -48,26 +48,6 @@ class AppSideNav extends React.Component {
     };
 
     /**
-     * before render
-     */
-    public componentWillMount(): void {
-        console.log('componentWillMount')
-    }
-
-    /**
-     * destroy 销毁
-     */
-    public componentWillUnmount(): void {
-        console.log('componentWillUnmount')
-    }
-    /**
-     * after render
-     */
-    public componentDidMount(): void {
-        console.log('componentDidMount')
-    }
-
-    /**
      * 渲染函数
      */
     public render(): React.ReactNode {
