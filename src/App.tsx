@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './App.css';
+import './App.scss';
 import AppHeader from './components/AppHeader';
 import AppSideNav from "./components/AppSideNav";
 
@@ -10,6 +10,7 @@ interface InitState {
 
 class App extends React.Component {
     public state: InitState;
+
     constructor(props: any) {
         super(props);
         this.state = {
@@ -29,7 +30,7 @@ class App extends React.Component {
     public render() {
         return (
             <div className="App">
-                <AppHeader key="header" children={this.state.message} childrenClick={this.getClick.bind(this)}/>
+                <AppHeader key="header" children={this.state.message} childrenClick={(e: any) => this.getClick(e)}/>
                 <AppSideNav/>
             </div>
         );

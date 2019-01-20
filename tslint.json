@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -9,6 +9,8 @@
   },
   "rules": {
     "no-console": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-no-lambda": false,
+    "jsx-no-bind": false
   }
 }

@@ -44,7 +44,8 @@ class AppSideNav extends React.Component {
      */
     public buildSideNav = (sideNav: string[]) => {
         // return sideNav.map(str => <li className="list-group-item" key={str}>{str}</li>)
-        return sideNav.map((str, index) =><button type="button" className="btn btn-primary" key={index} onClick={(e) => this.navTo(index.toString())}>{str}</button>)
+        return sideNav.map((str, index) => <button type="button" className="btn btn-primary" key={index}
+                                                   onClick={(e) => this.navTo(index.toString())}>{str}</button>)
     };
 
     /**
