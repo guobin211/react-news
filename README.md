@@ -1,5 +1,3 @@
-# react use typescript
+# react-news
 
-> 严格，专业的开发模式
-
-## 
+## typescript react admin start

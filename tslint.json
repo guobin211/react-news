@@ -8,9 +8,7 @@
     ]
   },
   "rules": {
-    "no-console": false,
-    "interface-name": false,
-    "jsx-no-lambda": false,
-    "jsx-no-bind": false
+    "object-literal-sort-keys": false,
+    "member-access": false
   }
 }
