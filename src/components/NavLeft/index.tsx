@@ -48,7 +48,7 @@ export class NavLeft extends React.Component<Props<any>, IState> {
 
     render(): React.ReactNode {
         return (
-            <div className="container">
+            <div className="nav-left">
                 <div className="logo">
                     <h1>React UI</h1>
                 </div>

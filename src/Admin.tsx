@@ -1,18 +1,30 @@
-import { Col, Row } from "antd";
+import { Layout } from "antd";
 import * as React from "react";
+import { FooterContent } from "./components/FooterContent";
+import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
 
-export class Admin extends React.Component{
+const {
+    Header, Footer, Sider, Content,
+} = Layout;
+
+export class Admin extends React.Component {
     render(): React.ReactNode {
         return (
-            <Row className="container">
-                <Col span={4} className="nav-left">
-                   <NavLeft/>
-                </Col>
-                <Col span={20} className="main">
-                 ll
-                </Col>
-            </Row>
+            <Layout className="container">
+                <Sider>
+                    <NavLeft/>
+                </Sider>
+                <Layout>
+                    <Header style={{ background: '#fff', padding: 0 }}>
+                        <HeaderContent/>
+                    </Header>
+                    <Content>Content</Content>
+                    <Footer>
+                        <FooterContent/>
+                    </Footer>
+                </Layout>
+            </Layout>
         );
     }
 }

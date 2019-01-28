@@ -1,10 +1,10 @@
 import * as React from "react";
 
-export class Header extends React.Component{
+export class FooterContent extends React.Component{
     render(): React.ReactNode {
         return (
             <div>
-                header
+                <p>Antd React Typescript</p>
             </div>
         );
     }
