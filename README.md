@@ -1,3 +1,6 @@
 # react-news
 
-## typescript react admin start
+## typescript react start
+
+#### 使用typescript开发react应用
+
