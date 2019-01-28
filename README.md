@@ -6,6 +6,6 @@
 
 ### 预览图
 
-[![React-Ui](https://github.com/guobin211/react-news/master/images/blob/img.png)](https://github.com/guobin211/react-news)
+[![React-Ui](https://github.com/guobin211/react-news/blob/master/images/img.png)](https://github.com/guobin211/react-news)
 
 
