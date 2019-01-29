@@ -3,7 +3,7 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
-import { Home, IHomeProps } from "./pages/Home";
+import { IHomeProps } from "./pages/Home";
 
 const {
     Header, Footer, Sider, Content,
@@ -23,6 +23,11 @@ export class Admin extends React.Component {
         background: '#fff',
         padding: 0
     };
+
+    constructor(props: any) {
+        super(props);
+    }
+
     /**
      * render 函数
      */
@@ -37,8 +42,8 @@ export class Admin extends React.Component {
                         <HeaderContent/>
                     </Header>
                     <Content>
-                        Content
-                        <Home name={this.$Home.name}/>
+                        admin page route
+                        {this.props.children}
                     </Content>
                     <Footer>
                         <FooterContent/>

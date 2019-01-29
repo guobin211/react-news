@@ -2,9 +2,9 @@ import { Menu } from "antd";
 import SubMenu from "antd/es/menu/SubMenu";
 import { Props } from "react";
 import * as React from "react";
-// import { NavLink } from 'react-router-dom'
 import { menuConfig } from "../../config/menuConfig";
 import "./index.scss";
+// import { NavLink } from "react-router-dom";
 
 
 interface IState {

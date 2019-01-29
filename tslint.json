@@ -12,6 +12,7 @@
     "member-access": false,
     "no-console": false,
     "only-arrow-functions": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "jsx-no-lambda": false
   }
 }
