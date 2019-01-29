@@ -3,6 +3,7 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
+import { Home } from "./pages/Home";
 
 const {
     Header, Footer, Sider, Content,
@@ -19,7 +20,9 @@ export class Admin extends React.Component {
                     <Header style={{ background: '#fff', padding: 0 }}>
                         <HeaderContent/>
                     </Header>
-                    <Content>Content</Content>
+                    <Content>Content
+                        <Home/>
+                    </Content>
                     <Footer>
                         <FooterContent/>
                     </Footer>
