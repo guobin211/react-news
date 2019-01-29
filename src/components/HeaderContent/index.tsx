@@ -1,6 +1,7 @@
 import { Props } from "react";
 import * as React from "react";
 import { Tools } from "../../utils/Tools";
+import { Axios } from "../../service/axios";
 import "./index.scss";
 
 /**
@@ -9,8 +10,9 @@ import "./index.scss";
 export class HeaderContent extends React.Component<Props<any>> {
     public state = {
         userName: 'admin',
-        sysTime: null,
+        sysTime: undefined,
         weather: '天气',
+        dayPictureUrl: undefined,
     };
 
     constructor(props: any) {
@@ -23,7 +25,23 @@ export class HeaderContent extends React.Component<Props<any>> {
             this.setState({
                 sysTime
             })
-        }, 1000)
+        }, 1000);
+        this.getWeatherAPIData();
+    }
+
+    getWeatherAPIData() {
+        const city = '北京';
+        Axios.jsonp({
+            url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + encodeURIComponent(city) + '&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
+        }).then((res: any) => {
+            if (res.status === 'success') {
+                const data = res.results[0].weather_data[0];
+                this.setState({
+                    dayPictureUrl: data.dayPictureUrl,
+                    weather: data.weather
+                })
+            }
+        })
     }
 
     render(): React.ReactNode {
@@ -39,7 +57,7 @@ export class HeaderContent extends React.Component<Props<any>> {
                     <div className="weather">
                         <span className="date">{this.state.sysTime}</span>
                         <span className="weather-img">
-                            <img src="http://api.map.baidu.com/images/weather/day/qing.png" alt=""/>
+                            <img src={this.state.dayPictureUrl} alt=""/>
                         </span>
                         <span className="weather-detail">
                             {this.state.weather}
