@@ -3,6 +3,9 @@ import * as React from "react";
 import { Tools } from "../../utils/Tools";
 import "./index.scss";
 
+/**
+ * 使用react 自带的 props
+ */
 export class HeaderContent extends React.Component<Props<any>> {
     public state = {
         userName: 'admin',

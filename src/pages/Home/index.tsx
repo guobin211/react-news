@@ -1,16 +1,26 @@
 import * as React from "react";
-import { Props } from "react";
 
-interface IState {
+/**
+ * interface 声明以 I 开头 + 组件名 + Props / State (大驼峰规范)
+ */
+export interface IHomeProps{
+    name: string;
+}
+
+interface IHomeState {
+    // 常量命令 大写连接
     PAGE_NAME: string;
     Time: string;
 }
 
-export class Home extends React.Component<Props<any>, IState>{
+export class Home extends React.Component<IHomeProps, IHomeState>{
 
-    // constructor(props: any) {super(props);}
+    constructor(props: IHomeProps) {
+        super(props)
+    }
 
     componentWillMount(): void {
+        console.log(this.props.name);
         this.setState({
             PAGE_NAME: '主页'
         });
@@ -28,3 +38,4 @@ export class Home extends React.Component<Props<any>, IState>{
     }
 
 }
+
