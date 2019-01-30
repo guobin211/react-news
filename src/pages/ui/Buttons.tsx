@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Radio } from "antd";
+import "./ui.scss";
 
 interface IButtonsState {
     loading: boolean;

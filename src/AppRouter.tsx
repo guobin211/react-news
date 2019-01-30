@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Admin } from "./Admin";
 import React from "react";
 import { App } from "./App";
 import { Login } from "./pages/Login";
-
+import { Admin } from "./Admin";
 
 export class AppRouter extends React.Component {
     /**

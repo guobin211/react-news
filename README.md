@@ -25,7 +25,7 @@
 
 3. interface类型声明必须是大驼峰形式。`I-ComponentName-Props`。
    
-```typescript jsx
+```ts jsx
 
     export interface IAppProps {
         name: string;
@@ -48,4 +48,21 @@
         }
     }
 
+```
+
+4. 采用BrowserRouter路由
+
+```ts
+    import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+    import { App } from "./src/App";
+    // 一级路由
+    <Router>
+        <App>
+            <Switch>
+                <Route path="/login" component={Login}/>
+                <Route path="/" render={() => <Admin/>}/>
+            </Switch>
+        </App>
+    </Router>
+    
 ```

@@ -6,7 +6,8 @@ import { NavLeft } from "./components/NavLeft";
 import { NotFound } from "./pages/404";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
-import { Buttons } from "./pages/Ui/Buttons";
+import { Buttons } from "./pages/ui/Buttons";
+import { Modals } from "./pages/ui/Modals";
 
 
 const {
@@ -51,6 +52,7 @@ export class Admin extends React.Component {
                             <Route path="/home" component={Home}/>
                             <Route path="/404" component={NotFound}/>
                             <Route path="/ui/buttons" component={Buttons}/>
+                            <Route path="/ui/modals" component={Modals}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
