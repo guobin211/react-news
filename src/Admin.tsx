@@ -3,7 +3,11 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
-import { IHomeProps } from "./pages/Home";
+import { NotFound } from "./pages/404";
+import { Home, IHomeProps } from "./pages/Home";
+import { Route, Switch } from "react-router-dom";
+import { Buttons } from "./pages/Ui/Buttons";
+
 
 const {
     Header, Footer, Sider, Content,
@@ -42,8 +46,13 @@ export class Admin extends React.Component {
                         <HeaderContent/>
                     </Header>
                     <Content>
-                        admin page route
-                        {this.props.children}
+                        {/* 子页面路由 */}
+                        <Switch>
+                            <Route path="/home" component={Home}/>
+                            <Route path="/404" component={NotFound}/>
+                            <Route path="/ui/buttons" component={Buttons}/>
+                            <Route path="" component={Home}/>
+                        </Switch>
                     </Content>
                     <Footer>
                         <FooterContent/>

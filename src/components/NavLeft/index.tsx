@@ -4,6 +4,8 @@ import { Props } from "react";
 import * as React from "react";
 import { menuConfig } from "../../config/menuConfig";
 import "./index.scss";
+import { Link } from "react-router-dom";
+
 // import { NavLink } from "react-router-dom";
 
 
@@ -40,8 +42,7 @@ export class NavLeft extends React.Component<Props<any>, IState> {
                 )
             }
             return <Menu.Item title={item.title} key={item.key}>
-                {item.title}
-                {/*<NavLink to={item.key}>{item.title}</NavLink>*/}
+                <Link to={item.key}>{item.title}</Link>
             </Menu.Item>
         })
     };

@@ -20,7 +20,6 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
     }
 
     componentWillMount(): void {
-        console.log(this.props.name);
         this.setState({
             PAGE_NAME: '主页'
         });
@@ -31,8 +30,8 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
 
     render(): React.ReactNode {
         return (
-            <div>
-                当前页面为: {this.state.PAGE_NAME}, 时间为: {this.state.Time}
+            <div className="center-text">
+                <h3>当前页面为: {this.state.PAGE_NAME}, React Typescript Ui</h3>
             </div>
         );
     }

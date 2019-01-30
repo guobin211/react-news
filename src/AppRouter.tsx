@@ -1,17 +1,24 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Admin } from "./Admin";
-import { Home } from "./pages/Home";
 import React from "react";
+import { App } from "./App";
+import { Login } from "./pages/Login";
+
 
 export class AppRouter extends React.Component {
+    /**
+     * 根路由
+     */
     render(): React.ReactNode {
         return (
-            <HashRouter>
-                <Switch>
-                    <Route path="/" component={Admin} />
-                    <Route path="/home" component={Home} />
-                </Switch>
-            </HashRouter>
+            <Router>
+                <App>
+                    <Switch>
+                        <Route path="/login" component={Login}/>
+                        <Route path="/" render={() => <Admin/>}/>
+                    </Switch>
+                </App>
+            </Router>
         );
     }
 }
