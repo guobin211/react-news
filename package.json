@@ -7,6 +7,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "homepage": "https://github.com/guobin211/react-news",
   "dependencies": {
     "antd": "^3.13.0",
     "autoprefixer": "7.1.6",

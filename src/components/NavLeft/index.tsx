@@ -6,9 +6,6 @@ import { menuConfig } from "../../config/menuConfig";
 import "./index.scss";
 import { Link } from "react-router-dom";
 
-// import { NavLink } from "react-router-dom";
-
-
 interface IState {
     menuTreeNode: any;
 }
