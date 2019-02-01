@@ -9,8 +9,11 @@ import { Route, Switch } from "react-router-dom";
 import { Buttons } from "./pages/ui/Buttons";
 import { Carousels } from "./pages/ui/Carousels";
 import { Gallery } from "./pages/ui/Gallery";
+import { Loading } from "./pages/ui/Loading";
 import { Messages } from "./pages/ui/Messages";
 import { Modals } from "./pages/ui/Modals";
+import { Notice } from "./pages/ui/Notice";
+import { TabsPage } from "./pages/ui/TabsPage";
 
 
 const {
@@ -59,6 +62,9 @@ export class Admin extends React.Component {
                             <Route path="/ui/carousel" component={Carousels}/>
                             <Route path="/ui/gallery" component={Gallery}/>
                             <Route path="/ui/messages" component={Messages}/>
+                            <Route path="/ui/notification" component={Notice}/>
+                            <Route path="/ui/loadings" component={Loading}/>
+                            <Route path="/ui/tabs" component={TabsPage}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
