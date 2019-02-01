@@ -3,7 +3,6 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
-import { NotFound } from "./pages/404";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import { Buttons } from "./pages/ui/Buttons";
@@ -56,7 +55,6 @@ export class Admin extends React.Component {
                         {/* 子页面路由 */}
                         <Switch>
                             <Route path="/home" component={Home}/>
-                            <Route path="/404" component={NotFound}/>
                             <Route path="/ui/buttons" component={Buttons}/>
                             <Route path="/ui/modals" component={Modals}/>
                             <Route path="/ui/carousel" component={Carousels}/>
