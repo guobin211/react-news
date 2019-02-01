@@ -17,6 +17,7 @@ class LoginForm extends React.Component<IPropsLoginForm> {
         this.props.form.validateFields((err: any, values: string) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                window.location.href = '/home';
             }
         });
     }

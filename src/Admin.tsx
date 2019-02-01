@@ -5,6 +5,7 @@ import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
+import { LoginForm } from "./pages/form/Login";
 import { Buttons } from "./pages/ui/Buttons";
 import { Carousels } from "./pages/ui/Carousels";
 import { Gallery } from "./pages/ui/Gallery";
@@ -63,6 +64,7 @@ export class Admin extends React.Component {
                             <Route path="/ui/notification" component={Notice}/>
                             <Route path="/ui/loadings" component={Loading}/>
                             <Route path="/ui/tabs" component={TabsPage}/>
+                            <Route path="/form/login" component={LoginForm}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
