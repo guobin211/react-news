@@ -9,6 +9,7 @@
 # production
 /build
 /design
+/resource
 
 # misc
 .DS_Store

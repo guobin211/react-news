@@ -7,6 +7,9 @@ import { NotFound } from "./pages/404";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import { Buttons } from "./pages/ui/Buttons";
+import { Carousels } from "./pages/ui/Carousels";
+import { Gallery } from "./pages/ui/Gallery";
+import { Messages } from "./pages/ui/Messages";
 import { Modals } from "./pages/ui/Modals";
 
 
@@ -53,6 +56,9 @@ export class Admin extends React.Component {
                             <Route path="/404" component={NotFound}/>
                             <Route path="/ui/buttons" component={Buttons}/>
                             <Route path="/ui/modals" component={Modals}/>
+                            <Route path="/ui/carousel" component={Carousels}/>
+                            <Route path="/ui/gallery" component={Gallery}/>
+                            <Route path="/ui/messages" component={Messages}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>

@@ -8,6 +8,9 @@
 
 [![React-Ui](https://github.com/guobin211/react-news/blob/master/images/img.png)](https://github.com/guobin211/react-news)
 
+### resource 为静态资源目录，将整个文件夹部署到index.html同级目录
+
+
 ### 开发注意事项
 
 1. 请尽量遵循ts-lint的语法检查，避免无类型声明的变量。
