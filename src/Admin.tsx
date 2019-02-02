@@ -7,6 +7,8 @@ import { RegisterForm } from "./pages/form/Register";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import { LoginForm } from "./pages/form/Login";
+import { BasicTable } from "./pages/table/BasicTable";
+import { ReactiveTable } from "./pages/table/ReactiveTable";
 import { Buttons } from "./pages/ui/Buttons";
 import { Carousels } from "./pages/ui/Carousels";
 import { Gallery } from "./pages/ui/Gallery";
@@ -15,6 +17,7 @@ import { Messages } from "./pages/ui/Messages";
 import { Modals } from "./pages/ui/Modals";
 import { Notice } from "./pages/ui/Notice";
 import { TabsPage } from "./pages/ui/TabsPage";
+import { RichEditor } from "./pages/RichEditor";
 
 
 const {
@@ -67,6 +70,9 @@ export class Admin extends React.Component {
                             <Route path="/ui/tabs" component={TabsPage}/>
                             <Route path="/form/login" component={LoginForm}/>
                             <Route path="/form/reg" component={RegisterForm}/>
+                            <Route path="/table/basic" component={BasicTable}/>
+                            <Route path="/table/high" component={ReactiveTable}/>
+                            <Route path="/rich" component={RichEditor}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
