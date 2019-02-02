@@ -1,7 +1,7 @@
 import {Card} from 'antd';
+// 主题颜色
 import {lightTheme} from '../chartThemes';
 import React from "react";
-
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts'
 // 引入饼图和折线图

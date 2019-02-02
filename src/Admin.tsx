@@ -3,6 +3,9 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
+import { BarChart } from "./pages/echarts/BarChart";
+import { LineChart } from "./pages/echarts/LineChart";
+import { PieChart } from "./pages/echarts/PieChart";
 import { RegisterForm } from "./pages/form/Register";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
@@ -73,6 +76,9 @@ export class Admin extends React.Component {
                             <Route path="/table/basic" component={BasicTable}/>
                             <Route path="/table/high" component={ReactiveTable}/>
                             <Route path="/rich" component={RichEditor}/>
+                            <Route path="/charts/line" component={LineChart}/>
+                            <Route path="/charts/bar" component={BarChart}/>
+                            <Route path="/charts/pie" component={PieChart}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>

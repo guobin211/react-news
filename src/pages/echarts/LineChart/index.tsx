@@ -1,15 +1,15 @@
-import React from "react";
 import { Card } from "antd";
-import ReactEcharts from 'echarts-for-react';
-import {Theme} from '../chartThemes';
 import echarts from 'echarts';
+import ReactEcharts from 'echarts-for-react';
 // 引入饼图和折线图
 import 'echarts/lib/chart/line'
-// 引入提示框和标题组件
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
+import 'echarts/lib/component/title';
+// 引入提示框和标题组件
+import 'echarts/lib/component/tooltip';
+import React from "react";
+import { Theme } from '../chartThemes';
 
 export class LineChart extends React.Component{
 
@@ -20,7 +20,7 @@ export class LineChart extends React.Component{
     }
 
     getOption() {
-        const option = {
+        return {
             title: {
                 text: '用户骑行订单'
             },
@@ -56,20 +56,19 @@ export class LineChart extends React.Component{
                     ]
                 }
             ]
-        }
-        return option;
+        };
     }
 
     getOption2() {
-        const option = {
+        return {
             title: {
                 text: '用户骑行订单'
             },
             tooltip: {
                 trigger: 'axis'
             },
-            legend:{
-                data:['OFO订单量','摩拜订单量']
+            legend: {
+                data: ['OFO订单量', '摩拜订单量']
             },
             xAxis: {
                 data: [
@@ -115,12 +114,11 @@ export class LineChart extends React.Component{
                     ]
                 },
             ]
-        }
-        return option;
+        };
     }
 
     getOption3() {
-        const option = {
+        return {
             title: {
                 text: '用户骑行订单'
             },
@@ -128,7 +126,7 @@ export class LineChart extends React.Component{
                 trigger: 'axis'
             },
             xAxis: {
-                type:'category',
+                type: 'category',
                 boundaryGap: false,
                 data: [
                     '周一',
@@ -159,8 +157,7 @@ export class LineChart extends React.Component{
                     areaStyle: {}
                 }
             ]
-        }
-        return option;
+        };
     }
 
     render(): React.ReactNode {

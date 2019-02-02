@@ -29,6 +29,8 @@
     "jest",
     "resource",
     "design",
-    "config"
+    "config",
+    "public",
+    "config-overrides.js"
   ]
 }

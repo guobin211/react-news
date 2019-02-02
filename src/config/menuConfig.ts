@@ -105,7 +105,7 @@ export const menuConfig = [
         key: '/bikeMap'
     },
     {
-        title: '图标',
+        title: '图表',
         key: '/charts',
         children: [
             {
