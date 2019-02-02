@@ -3,6 +3,7 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
+import { RegisterForm } from "./pages/form/Register";
 import { Home, IHomeProps } from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import { LoginForm } from "./pages/form/Login";
@@ -65,6 +66,7 @@ export class Admin extends React.Component {
                             <Route path="/ui/loadings" component={Loading}/>
                             <Route path="/ui/tabs" component={TabsPage}/>
                             <Route path="/form/login" component={LoginForm}/>
+                            <Route path="/form/reg" component={RegisterForm}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
