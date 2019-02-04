@@ -20,7 +20,7 @@
 ```
     
     /HeaderContent/
-        /index.tsx
+        /UserForm.tsx
         
     export class HeaderContent extends React.Component{}
     
