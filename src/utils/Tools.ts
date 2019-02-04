@@ -4,24 +4,26 @@
  */
 
 export class Tools {
-    static formatDate(time: any){
-        if(!time) {return ''; }
+    static formatDate(time: any) {
+        if (!time) {
+            return '';
+        }
         const date = new Date(time);
-        return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
     }
 
-    static pagination(data: any, callback: (data: any) => void){
+    static pagination(data: any, callback: (data: any) => void) {
         return {
-            onChange:(current: any)=>{
+            onChange: (current: any) => {
                 callback(current)
             },
-            current:data.result.page,
-            pageSize:data.result.page_size,
+            current: data.result.page,
+            pageSize: data.result.page_size,
             total: data.result.total_count,
-            showTotal:()=>{
+            showTotal: () => {
                 return `共${data.result.total_count}条`
             },
-            showQuickJumper:true
+            showQuickJumper: true
         }
     }
 }

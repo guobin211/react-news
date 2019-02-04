@@ -3,6 +3,7 @@ import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
+import { BMap } from "./pages/BMap";
 import { BarChart } from "./pages/echarts/BarChart";
 import { LineChart } from "./pages/echarts/LineChart";
 import { PieChart } from "./pages/echarts/PieChart";
@@ -79,6 +80,7 @@ export class Admin extends React.Component {
                             <Route path="/charts/line" component={LineChart}/>
                             <Route path="/charts/bar" component={BarChart}/>
                             <Route path="/charts/pie" component={PieChart}/>
+                            <Route path="/bikeMap" component={BMap}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
