@@ -15,6 +15,7 @@
     "only-arrow-functions": false,
     "ordered-imports": false,
     "jsx-no-lambda": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "variable-name": false
   }
 }
