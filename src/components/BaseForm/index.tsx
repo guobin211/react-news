@@ -6,7 +6,7 @@ const Option = Select.Option;
 interface IBaseForm {
     form: any,
     filterSubmit: (data: any) => void;
-    formList: any[];
+    formList: any;
 }
 
 class SelfForm extends React.Component<IBaseForm> {
@@ -49,7 +49,7 @@ class SelfForm extends React.Component<IBaseForm> {
                 if (item.type === '时间查询'){
                     const beginTime = <FormItem label="订单时间" key={field}>
                         {
-                            getFieldDecorator('begin_time')(
+                            getFieldDecorator('beginTime')(
                                 <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss"/>
                             )
                         }
@@ -57,7 +57,7 @@ class SelfForm extends React.Component<IBaseForm> {
                     formItemList.push(beginTime)
                     const endTime = <FormItem label="~" colon={false} key={field}>
                         {
-                            getFieldDecorator('end_time')(
+                            getFieldDecorator('endTime')(
                                 <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
                             )
                         }
