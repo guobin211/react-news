@@ -1,162 +1,183 @@
-import { Table } from "antd";
-import { TableRowSelection } from "antd/lib/table";
+import { Divider, Form, Icon, Switch, Table, Radio } from "antd";
+import { PaginationConfig } from "antd/lib/pagination";
 import React from "react";
+const FormItem = Form.Item;
+
 
 interface IETable {
-    rowSelection: any;
-    selectedRowKeys: any;
-    selectedIds: any;
-    selectedItem: any;
-    updateSelectedItem: any;
+    name: string | undefined
 }
 
+const columns = [{
+    title: '名字',
+    dataIndex: 'name',
+    key: 'name',
+    width: 150,
+    render: (text: any) => <a href="javascript:;">{text}</a>,
+}, {
+    title: '年龄',
+    dataIndex: 'age',
+    key: 'age',
+    width: 70,
+}, {
+    title: '地址',
+    dataIndex: 'address',
+    key: 'address',
+}, {
+    title: '操作',
+    key: 'action',
+    width: 360,
+    render: (text: any, record: any) => (
+        <span>
+      <a href="javascript:;">Action 一 {record.name}</a>
+      <Divider type="vertical" />
+      <a href="javascript:;">Delete</a>
+      <Divider type="vertical" />
+      <a href="javascript:;" className="ant-dropdown-link">
+        More actions <Icon type="down" />
+      </a>
+    </span>
+    ),
+}];
+
+const data: any[] = [];
+for (let i = 1; i <= 10; i++) {
+    data.push({
+        key: i,
+        name: 'Jack Ma',
+        age: `${i}2`,
+        address: `New York No. ${i} Lake Park`,
+        description: `My name is Jack Ma, I am ${i}2 years old, living in New York No. ${i} Lake Park.`,
+    });
+}
+
+const expandedRowRender = (record: any) => <p>{record.description}</p>;
+const title = () => 'Here is title';
+const showHeader = true;
+const footer = () => 'Here is footer';
+const scroll = { y: 240 };
+const pagination: PaginationConfig = { position: 'bottom' };
+
 export class ETable extends React.Component<IETable> {
-
-    state = {}
-
-    constructor(props: IETable) {
-        super(props)
+    state = {
+        bordered: false,
+        loading: false,
+        pagination,
+        size: undefined,
+        expandedRowRender,
+        title: undefined,
+        showHeader,
+        footer,
+        rowSelection: {},
+        scroll: undefined,
+        hasData: true,
     }
 
-    // 处理行点击事件
-    onRowClick = (record: any, index: number) => {
-        const rowSelection = this.props.rowSelection;
-        if (rowSelection === 'checkbox') {
-            let selectedRowKeys = this.props.selectedRowKeys;
-            let selectedIds = this.props.selectedIds;
-            let selectedItem = this.props.selectedItem || [];
-            if (selectedIds) {
-                const i = selectedIds.indexOf(record.id);
-                if (i === -1) { //  避免重复添加
-                    selectedIds.push(record.id)
-                    selectedRowKeys.push(index);
-                    selectedItem.push(record);
-                } else {
-                    selectedIds.splice(i, 1);
-                    selectedRowKeys.splice(i, 1);
-                    selectedItem.splice(i, 1);
-                }
-            } else {
-                selectedIds = [record.id];
-                selectedRowKeys = [index]
-                selectedItem = [record];
-            }
-            this.props.updateSelectedItem(selectedRowKeys, selectedItem || {}, selectedIds);
-        } else {
-            const selectKey = [index];
-            const selectedRowKeys = this.props.selectedRowKeys;
-            if (selectedRowKeys && selectedRowKeys[0] === index) {
-                return;
-            }
-            this.props.updateSelectedItem(selectKey, record || {});
-        }
-    };
+    handleToggle = (prop: any) => (enable: any) => {
+        this.setState({ [prop]: enable });
+    }
 
-    // 选择框变更
-    onSelectChange = (selectedRowKeys: any, selectedRows: any) => {
-        const rowSelection = this.props.rowSelection;
-        const selectedIds: any[] = [];
-        if (rowSelection === 'checkbox') {
-            selectedRows.map((item: any) => {
-                selectedIds.push(item.id);
-            });
-            this.setState({
-                selectedRowKeys,
-                selectedIds,
-                selectedItem: selectedRows[0]
-            });
-        }
-        this.props.updateSelectedItem(selectedRowKeys, selectedRows[0], selectedIds);
-    };
+    handleSizeChange = (e: any) => {
+        this.setState({ size: e.target.value });
+    }
 
-    onSelectAll = (selected: any, selectedRows: any, changeRows: any) => {
-        const selectedIds: any[] = [];
-        const selectKey: any[] = [];
-        selectedRows.forEach((item: any, i: any) => {
-            selectedIds.push(item.id);
-            selectKey.push(i);
+    handleExpandChange = (enable: any) => {
+        this.setState({ expandedRowRender: enable ? expandedRowRender : undefined });
+    }
+
+    handleTitleChange = (enable: any) => {
+        this.setState({ title: enable ? title : undefined });
+    }
+
+    handleHeaderChange = (enable: any) => {
+        this.setState({ showHeader: enable ? showHeader : false });
+    }
+
+    handleFooterChange = (enable: any) => {
+        this.setState({ footer: enable ? footer : undefined });
+    }
+
+    handleRowSelectionChange = (enable: any) => {
+        this.setState({ rowSelection: enable ? {} : undefined });
+    }
+
+    handleScrollChange = (enable: any) => {
+        this.setState({ scroll: enable ? scroll : undefined });
+    }
+
+    handleDataChange = (hasData: any) => {
+        this.setState({ hasData });
+    }
+
+    handlePaginationChange = (e: any) => {
+        const { value } = e.target;
+        this.setState({
+            pagination: value === 'none' ? false : { position: value },
         });
-        this.props.updateSelectedItem(selectKey, selectedRows[0] || {}, selectedIds);
     }
-
-    getOptions = () => {
-        const p: any = this.props;
-        const nameList = {
-            "订单编号": 170,
-            "车辆编号": 80,
-            "手机号码": 96,
-            "用户姓名": 70,
-            "密码": 70,
-            "运维区域": 300,
-            "车型": 42,
-            "故障编号": 76,
-            "代理商编码": 97,
-            "角色ID": 64
-        };
-        if (p.columns && p.columns.length > 0) {
-            p.columns.forEach((item: any) => {
-                // 开始/结束 时间
-                if (!item.title) {
-                    return
-                }
-                if (!item.width) {
-                    if (item.title.indexOf("时间") > -1 && item.title.indexOf("持续时间") < 0) {
-                        item.width = 132
-                    } else if (item.title.indexOf("图片") > -1) {
-                        item.width = 86
-                    } else if (item.title.indexOf("权限") > -1 || item.title.indexOf("负责城市") > -1) {
-                        item.width = '40%';
-                        item.className = "text-left";
-                    } else {
-                        if (nameList[item.title]) {
-                            item.width = nameList[item.title];
-                        }
-                    }
-                }
-                item.bordered = true;
-            });
-        }
-        const {selectedRowKeys} = this.props;
-        const rowSelection: TableRowSelection<any> = {
-            type: 'radio',
-            selectedRowKeys,
-            onChange: this.onSelectChange,
-            onSelect: (record: any, selected: any, selectedRows: any) => {
-                console.log('...')
-            },
-            onSelectAll: this.onSelectAll
-        };
-        let row_selection = this.props.rowSelection;
-        // 当属性未false或者null时，说明没有单选或者复选列
-        if (row_selection === false || row_selection === null) {
-            row_selection = false;
-        } else if (row_selection === 'checkbox') {
-            // 设置类型未复选框
-            rowSelection.type = 'checkbox';
-        } else {
-            // 默认未单选
-            row_selection = 'radio';
-        }
-        return <Table
-            className="card-wrap page-table"
-            bordered={true}
-            {...this.props}
-            rowSelection={row_selection ? rowSelection : undefined}
-            onRow={(record: any, index: any) => ({
-                onClick: () => {
-                    if (!row_selection) {
-                        return;
-                    }
-                    this.onRowClick(record, index)
-                }
-            })}
-        />
-    };
 
     render(): React.ReactNode {
+        const state = this.state;
         return (
             <div>
-                {this.getOptions()}
+                <div className="components-table-demo-control-bar">
+                    <Form layout="inline">
+                        <FormItem label="边框">
+                            <Switch checked={state.bordered} onChange={this.handleToggle('bordered')} />
+                        </FormItem>
+                        <FormItem label="loading">
+                            <Switch checked={state.loading} onChange={this.handleToggle('loading')} />
+                        </FormItem>
+                        <FormItem label="标题">
+                            <Switch checked={!!state.title} onChange={this.handleTitleChange} />
+                        </FormItem>
+                        <FormItem label="行头">
+                            <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
+                        </FormItem>
+                        <FormItem label="页脚">
+                            <Switch checked={!!state.footer} onChange={this.handleFooterChange} />
+                        </FormItem>
+                        <FormItem label="折叠">
+                            <Switch checked={!!state.expandedRowRender} onChange={this.handleExpandChange} />
+                        </FormItem>
+                        <FormItem label="选择">
+                            <Switch checked={!!state.rowSelection} onChange={this.handleRowSelectionChange} />
+                        </FormItem>
+                        <FormItem label="固定">
+                            <Switch checked={!!state.scroll} onChange={this.handleScrollChange} />
+                        </FormItem>
+                        <FormItem label="数据">
+                            <Switch checked={!!state.hasData} onChange={this.handleDataChange} />
+                        </FormItem>
+                        <FormItem label="样式">
+                            <Radio.Group size="default" value={state.size} onChange={this.handleSizeChange}>
+                                <Radio.Button value="default">Default</Radio.Button>
+                                <Radio.Button value="middle">Middle</Radio.Button>
+                                <Radio.Button value="small">Small</Radio.Button>
+                            </Radio.Group>
+                        </FormItem>
+                        <FormItem label="位置">
+                            <Radio.Group
+                                value={state.pagination ? state.pagination.position : 'none'}
+                                onChange={this.handlePaginationChange}
+                            >
+                                <Radio.Button value="top">Top</Radio.Button>
+                                <Radio.Button value="bottom">Bottom</Radio.Button>
+                                <Radio.Button value="both">Both</Radio.Button>
+                                <Radio.Button value="none">None</Radio.Button>
+                            </Radio.Group>
+                        </FormItem>
+                    </Form>
+                </div>
+                <Table columns={columns}
+                       bordered={this.state.bordered}
+                       size={this.state.size}
+                       title={this.state.title}
+                       footer={this.state.footer}
+                       expandedRowRender={this.state.expandedRowRender}
+                       pagination={this.state.pagination}
+                       loading={this.state.loading}
+                       dataSource={state.hasData ? data : undefined} />
             </div>
         );
     }

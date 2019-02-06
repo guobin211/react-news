@@ -24,6 +24,7 @@ import { Modals } from "./pages/ui/Modals";
 import { Notice } from "./pages/ui/Notice";
 import { TabsPage } from "./pages/ui/TabsPage";
 import { RichEditor } from "./pages/RichEditor";
+import { User } from "./pages/User";
 
 
 const {
@@ -88,6 +89,7 @@ export class Admin extends React.Component {
                             <Route path="/charts/pie" component={PieChart}/>
                             <Route path="/bikeMap" component={BMap}/>
                             <Route path="/city" component={City}/>
+                            <Route path="/user" component={User}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>

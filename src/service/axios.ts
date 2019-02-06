@@ -46,12 +46,12 @@ export class Axios {
                 }
                 if (response.status === 200){
                     const res = response.data;
-                    if (res.code === 0){
+                    if (res.code === 0 || res.code === '0'){
                         resolve(res);
                     }else{
                         Modal.info({
                             title:"提示",
-                            content:res.msg
+                            content: 'Axios请求错误: ' + res.msg
                         })
                     }
                 }else{
