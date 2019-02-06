@@ -1,9 +1,11 @@
 import { Layout } from "antd";
+import { CSSProperties } from "react";
 import * as React from "react";
 import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
 import { BMap } from "./pages/BMap";
+import { City } from "./pages/City";
 import { BarChart } from "./pages/echarts/BarChart";
 import { LineChart } from "./pages/echarts/LineChart";
 import { PieChart } from "./pages/echarts/PieChart";
@@ -43,6 +45,10 @@ export class Admin extends React.Component {
         padding: 0
     };
 
+    private $ContentStyle: CSSProperties | undefined = {
+        overflow: "scroll"
+    };
+
     constructor(props: any) {
         super(props);
     }
@@ -60,7 +66,7 @@ export class Admin extends React.Component {
                     <Header style={this.$HeaderStyle}>
                         <HeaderContent/>
                     </Header>
-                    <Content>
+                    <Content style={this.$ContentStyle}>
                         {/* 子页面路由 */}
                         <Switch>
                             <Route path="/home" component={Home}/>
@@ -81,6 +87,7 @@ export class Admin extends React.Component {
                             <Route path="/charts/bar" component={BarChart}/>
                             <Route path="/charts/pie" component={PieChart}/>
                             <Route path="/bikeMap" component={BMap}/>
+                            <Route path="/city" component={City}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>
