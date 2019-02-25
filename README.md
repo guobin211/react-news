@@ -6,6 +6,9 @@
 
 ### 预览图
 
+[![React-Ui](https://github.com/guobin211/react-news/blob/master/images/react.png)](https://github.com/guobin211/react-news)
+
+
 [![React-Ui](https://github.com/guobin211/react-news/blob/master/images/img.png)](https://github.com/guobin211/react-news)
 
 ### resource 为静态资源目录，将整个文件夹部署到index.html同级目录
