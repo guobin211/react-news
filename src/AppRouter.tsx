@@ -10,6 +10,7 @@ export class AppRouter extends React.Component {
      * 根路由
      */
     render(): React.ReactNode {
+        console.log(this.props);
         return (
             <Router>
                 <App>

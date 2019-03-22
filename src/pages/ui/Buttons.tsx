@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Radio } from "antd";
 import "./ui.scss";
+import { store } from "../../redux/store";
 
 interface IButtonsState {
     loading: boolean;
@@ -16,6 +17,7 @@ export class Buttons extends React.Component<any, IButtonsState> {
 
     constructor(props: any) {
         super(props);
+
     }
 
     handleCloseLoading=()=>{
@@ -30,13 +32,21 @@ export class Buttons extends React.Component<any, IButtonsState> {
         })
     };
 
+    handleAdd = (e: any) => {
+        store.dispatch({type: 'INCREMENT'});
+    };
+
+    handleDecrement = (e: any) => {
+        store.dispatch({type: 'DECREMENT'});
+    };
+
     render(): React.ReactNode {
         return (
            <div>
                <Card title="基础按钮" className="card-wrap">
-                   <Button type="primary">Antd</Button>
-                   <Button>Antd</Button>
-                   <Button type="dashed">Antd</Button>
+                   <Button type="primary" onClick={this.handleAdd}>增加</Button>
+                   <Button onClick={this.handleDecrement}>减少</Button>
+                   <Button type="dashed">0</Button>
                    <Button type="danger">Antd</Button>
                    <Button disabled={true}>Antd</Button>
                </Card>

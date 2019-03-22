@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/guobin211/react-news",
   "dependencies": {
+    "@types/react-redux": "^7.0.3",
     "antd": "^3.13.0",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -45,7 +46,9 @@
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.7.0",
     "react-draft-wysiwyg": "^1.13.1",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
     "resolve": "1.6.0",
     "source-map-loader": "^0.2.1",
     "style-loader": "0.19.0",
@@ -73,6 +76,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-draft-wysiwyg": "^1.12.1",
     "@types/react-router-dom": "^4.3.1",
+    "redux-devtools": "^3.5.0",
     "typescript": "^3.2.4"
   },
   "jest": {
