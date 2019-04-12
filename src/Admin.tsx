@@ -5,6 +5,9 @@ import { FooterContent } from "./components/FooterContent";
 import { HeaderContent } from "./components/HeaderContent";
 import { NavLeft } from "./components/NavLeft";
 import { BMap } from "./pages/BMap";
+import { Animate } from "./pages/canvas/Animate";
+import { Basic } from "./pages/canvas/Basic";
+import { High } from "./pages/canvas/High";
 import { City } from "./pages/City";
 import { BarChart } from "./pages/echarts/BarChart";
 import { LineChart } from "./pages/echarts/LineChart";
@@ -90,6 +93,9 @@ export class Admin extends React.Component {
                             <Route path="/bikeMap" component={BMap}/>
                             <Route path="/city" component={City}/>
                             <Route path="/user" component={User}/>
+                            <Route path="/canvas/high" component={High}/>
+                            <Route path="/canvas/animate" component={Animate}/>
+                            <Route path="/canvas/basic" component={Basic}/>
                             <Route path="" component={Home}/>
                         </Switch>
                     </Content>

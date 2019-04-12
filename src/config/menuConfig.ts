@@ -123,6 +123,25 @@ export const menuConfig = [
         ]
     },
     {
+        title: 'Canvas',
+        key: '/canvas',
+        children:
+            [
+                {
+                    title: '基础图形',
+                    key: '/canvas/basic'
+                },
+                {
+                    title: '不规则图形',
+                    key: '/canvas/high'
+                },
+                {
+                    title: '动画',
+                    key: '/canvas/animate'
+                },
+            ]
+    },
+    {
         title: '权限设置',
         key: '/permission'
     }
