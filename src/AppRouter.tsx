@@ -10,9 +10,9 @@ export class AppRouter extends React.Component {
      * 根路由
      */
     render(): React.ReactNode {
-        console.log(this.props);
         return (
             <Router>
+                {/* app 装载路由 */}
                 <App>
                     <Switch>
                         <Route path="/login" component={Login}/>
