@@ -31,79 +31,79 @@ import { User } from "./pages/User";
 
 
 const {
-    Header, Footer, Sider, Content,
+  Header, Footer, Sider, Content,
 } = Layout;
 
 export class Admin extends React.Component {
 
-    /**
-     * 组件对应的输入属性
-     * 以 `$ + 组件名` 命名
-     */
-    public $Home: IHomeProps = {
-        name: 'home'
-    };
+  /**
+   * 组件对应的输入属性
+   * 以 `$ + 组件名` 命名
+   */
+  public $Home: IHomeProps = {
+    name: 'home'
+  };
 
-    private $HeaderStyle = {
-        background: '#fff',
-        padding: 0
-    };
+  private $HeaderStyle = {
+    background: '#fff',
+    padding: 0
+  };
 
-    private $ContentStyle: CSSProperties | undefined = {
-        overflow: "scroll"
-    };
+  private $ContentStyle: CSSProperties | undefined = {
+    overflow: "scroll"
+  };
 
-    constructor(props: any) {
-        super(props);
-    }
+  constructor(props: any) {
+    super(props);
+  }
 
-    /**
-     * render 函数
-     */
-    render(): React.ReactNode {
-        return (
-            <Layout className="container">
-                <Sider>
-                    <NavLeft/>
-                </Sider>
-                <Layout>
-                    <Header style={this.$HeaderStyle}>
-                        <HeaderContent/>
-                    </Header>
-                    <Content style={this.$ContentStyle}>
-                        {/* 子页面路由 */}
-                        <Switch>
-                            <Route path="/home" component={Home}/>
-                            <Route path="/ui/buttons" component={Buttons}/>
-                            <Route path="/ui/modals" component={Modals}/>
-                            <Route path="/ui/carousel" component={Carousels}/>
-                            <Route path="/ui/gallery" component={Gallery}/>
-                            <Route path="/ui/messages" component={Messages}/>
-                            <Route path="/ui/notification" component={Notice}/>
-                            <Route path="/ui/loadings" component={Loading}/>
-                            <Route path="/ui/tabs" component={TabsPage}/>
-                            <Route path="/form/login" component={LoginForm}/>
-                            <Route path="/form/reg" component={RegisterForm}/>
-                            <Route path="/table/basic" component={BasicTable}/>
-                            <Route path="/table/high" component={ReactiveTable}/>
-                            <Route path="/rich" component={RichEditor}/>
-                            <Route path="/charts/line" component={LineChart}/>
-                            <Route path="/charts/bar" component={BarChart}/>
-                            <Route path="/charts/pie" component={PieChart}/>
-                            <Route path="/bikeMap" component={BMap}/>
-                            <Route path="/city" component={City}/>
-                            <Route path="/user" component={User}/>
-                            <Route path="/canvas/high" component={High}/>
-                            <Route path="/canvas/animate" component={Animate}/>
-                            <Route path="/canvas/basic" component={Basic}/>
-                            <Route path="" component={Home}/>
-                        </Switch>
-                    </Content>
-                    <Footer>
-                        <FooterContent/>
-                    </Footer>
-                </Layout>
-            </Layout>
-        );
-    }
+  /**
+   * render 函数
+   */
+  render(): React.ReactNode {
+    return (
+      <Layout className="container">
+        <Sider>
+          <NavLeft/>
+        </Sider>
+        <Layout>
+          <Header style={this.$HeaderStyle}>
+            <HeaderContent/>
+          </Header>
+          <Content style={this.$ContentStyle}>
+            {/* 子页面路由 */}
+            <Switch>
+              <Route path="/home" component={Home}/>
+              <Route path="/ui/buttons" component={Buttons}/>
+              <Route path="/ui/modals" component={Modals}/>
+              <Route path="/ui/carousel" component={Carousels}/>
+              <Route path="/ui/gallery" component={Gallery}/>
+              <Route path="/ui/messages" component={Messages}/>
+              <Route path="/ui/notification" component={Notice}/>
+              <Route path="/ui/loadings" component={Loading}/>
+              <Route path="/ui/tabs" component={TabsPage}/>
+              <Route path="/form/login" component={LoginForm}/>
+              <Route path="/form/reg" component={RegisterForm}/>
+              <Route path="/table/basic" component={BasicTable}/>
+              <Route path="/table/high" component={ReactiveTable}/>
+              <Route path="/rich" component={RichEditor}/>
+              <Route path="/charts/line" component={LineChart}/>
+              <Route path="/charts/bar" component={BarChart}/>
+              <Route path="/charts/pie" component={PieChart}/>
+              <Route path="/bikeMap" component={BMap}/>
+              <Route path="/city" component={City}/>
+              <Route path="/user" component={User}/>
+              <Route path="/canvas/high" component={High}/>
+              <Route path="/canvas/animate" component={Animate}/>
+              <Route path="/canvas/basic" component={Basic}/>
+              <Route path="" component={Home}/>
+            </Switch>
+          </Content>
+          <Footer>
+            <FooterContent/>
+          </Footer>
+        </Layout>
+      </Layout>
+    );
+  }
 }

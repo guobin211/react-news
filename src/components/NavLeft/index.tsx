@@ -7,56 +7,56 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 
 interface IState {
-    menuTreeNode: any;
+  menuTreeNode: any;
 }
 
 
 export class NavLeft extends React.Component<Props<any>, IState> {
 
-    constructor(props: any) {
-        super(props);
-    }
+  constructor(props: any) {
+    super(props);
+  }
 
-    componentWillMount() {
-        const menuTreeNode = this.renderMenu(menuConfig);
+  componentWillMount() {
+    const menuTreeNode = this.renderMenu(menuConfig);
 
-        this.setState({
-            menuTreeNode
-        })
-    }
+    this.setState({
+      menuTreeNode
+    })
+  }
 
-    /**
-     * render 菜单
-     * @param data
-     */
-    renderMenu = (data: any) => {
-        return data.map((item: any) => {
-            if (item.children) {
-                return (
-                    <SubMenu title={item.title} key={item.key}>
-                        {this.renderMenu(item.children)}
-                    </SubMenu>
-                )
-            }
-            return <Menu.Item title={item.title} key={item.key}>
-                <Link to={item.key}>{item.title}</Link>
-            </Menu.Item>
-        })
-    };
-
-    render(): React.ReactNode {
+  /**
+   * render 菜单
+   * @param data
+   */
+  renderMenu = (data: any) => {
+    return data.map((item: any) => {
+      if (item.children) {
         return (
-            <div className="nav-left">
-                <div className="logo">
-                    <h1>React UI</h1>
-                </div>
-                <Menu
-                    theme="dark"
-                >
-                    {this.state.menuTreeNode}
-                </Menu>
-            </div>
-        );
-    }
+          <SubMenu title={item.title} key={item.key}>
+            {this.renderMenu(item.children)}
+          </SubMenu>
+        )
+      }
+      return <Menu.Item title={item.title} key={item.key}>
+        <Link to={item.key}>{item.title}</Link>
+      </Menu.Item>
+    })
+  };
+
+  render(): React.ReactNode {
+    return (
+      <div className="nav-left">
+        <div className="logo">
+          <h1>React UI</h1>
+        </div>
+        <Menu
+          theme="dark"
+        >
+          {this.state.menuTreeNode}
+        </Menu>
+      </div>
+    );
+  }
 }
 

@@ -9,9 +9,9 @@ import { Provider, connect } from 'react-redux';
 const App = connect(storeToProps, dispatchToProps)(AppRouter);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+  <Provider store={store}>
+    <App/>
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

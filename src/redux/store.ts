@@ -8,13 +8,11 @@ import { counter } from "./reducers";
 export const store = createStore(counter);
 
 export function storeToProps(state: any) {
-    return {
-        init_data: state
-    }
+  return {
+    init_data: state
+  }
 }
 
 export function dispatchToProps(dispatch: any) {
-    return {
-
-    }
+  return {}
 }
