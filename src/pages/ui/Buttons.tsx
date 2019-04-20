@@ -86,3 +86,5 @@ export class Buttons extends React.Component<any, IButtonsState> {
     );
   }
 }
+
+export default Buttons;

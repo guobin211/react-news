@@ -83,16 +83,16 @@ export const menuConfig = [
     key: '/city'
   },
   {
-    title: '订单管理',
-    key: '/order',
-    btnList: [
+    title: 'Http管理',
+    key: '/http',
+    children: [
       {
-        title: '订单详情',
-        key: 'detail'
+        title: 'ajax',
+        key: '/http/ajax'
       },
       {
-        title: '结束订单',
-        key: 'finish'
+        title: 'fetch',
+        key: '/http/fetch'
       }
     ]
   },
