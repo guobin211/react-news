@@ -1,74 +1,44 @@
-# react-news
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 项目说明
+## Available Scripts
 
-> React + Typescript + Antd 快速开发管理系统界面
+In the project directory, you can run:
 
-### 预览图
+### `yarn start`
 
-[![React-Ui](https://github.com/guobin211/react-news/blob/master/images/react.png)](https://github.com/guobin211/react-news)
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-[![React-Ui](https://github.com/guobin211/react-news/blob/master/images/img.png)](https://github.com/guobin211/react-news)
+### `yarn test`
 
-### resource 为静态资源目录，将整个文件夹部署到index.html同级目录
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn build`
 
-### 开发注意事项
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. 请尽量遵循ts-lint的语法检查，避免无类型声明的变量。
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-2. 组件文件夹和组件名都必须以大写字母开头。私有组件应避免与现有的html标签重名。
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```
-    
-    /HeaderContent/
-        /UserForm.tsx
-        
-    export class HeaderContent extends React.Component{}
-    
-```
+### `yarn eject`
 
-3. interface类型声明必须是大驼峰形式。`I-ComponentName-Props`。
-   
-```ts jsx
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-    export interface IAppProps {
-        name: string;
-    }
-    interface IAppState {
-        name: string;
-    }
-    export class App extends React.Component<IAppProps, IAppState>{
-        constructor(props) {
-          super(props);
-        }
-        
-        render():React.ReactNode{
-            return (
-                <div>
-                {this.state.name}
-                <p>{this.props.name}</p>
-                </div>
-            );
-        }
-    }
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-4. 采用BrowserRouter路由
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```ts
-    import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-    import { App } from "./src/App";
-    // 一级路由
-    <Router>
-        <App>
-            <Switch>
-                <Route path="/login" component={Login}/>
-                <Route path="/" render={() => <Admin/>}/>
-            </Switch>
-        </App>
-    </Router>
-    
-```
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

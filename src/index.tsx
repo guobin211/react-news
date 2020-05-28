@@ -1,18 +1,37 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import './index.scss';
-import { AppRouter } from "./AppRouter";
-import { dispatchToProps, store, storeToProps } from "./redux/store";
-import registerServiceWorker from './registerServiceWorker';
-import { Provider, connect } from 'react-redux';
+import React, { Suspense } from 'react'
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import './index.css';
+import * as serviceWorker from './serviceWorker';
 
-const App = connect(storeToProps, dispatchToProps)(AppRouter);
+const Admin = React.lazy(() => import('./routes/AdminRoute'));
+const Login = React.lazy(() => import('./routes/LoginRoute'));
+const Visitor = React.lazy(() => import('./routes/VisitorRoute'));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App/>
-  </Provider>,
-  document.getElementById('root') as HTMLElement
+    <Suspense fallback={<div>loading</div>}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <Route path="/visitor">
+            <Visitor/>
+          </Route>
+          <Route path="/admin">
+            <Admin/>
+          </Route>
+          <Route path="">
+            <Login/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </Suspense>,
+  document.getElementById('root')
 );
-registerServiceWorker();
 
+serviceWorker.unregister();
