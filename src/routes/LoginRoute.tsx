@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export interface LoginRouteProps {
 }
@@ -6,8 +6,7 @@ export interface LoginRouteProps {
 export interface LoginRouteState {
 }
 
-export default class LoginRoute extends React.Component<LoginRouteProps, LoginRouteState>{
-
+export default class LoginRoute extends React.Component<LoginRouteProps, LoginRouteState> {
   render() {
     return (
       <div className="LoginRoute">

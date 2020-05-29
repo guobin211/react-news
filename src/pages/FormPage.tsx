@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { openModel } from '../shared/ModelService'
 
 export interface FormPageProps {
@@ -7,11 +7,10 @@ export interface FormPageProps {
 export interface FormPageState {
 }
 
-export default class FormPage extends React.Component<FormPageProps, FormPageState>{
-
+export default class FormPage extends React.Component<FormPageProps, FormPageState> {
   public openModel(text: string) {
     openModel(text, (e: any) => {
-      console.log(e);
+      console.log(e)
     })
   }
 
