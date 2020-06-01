@@ -26,6 +26,8 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/triple-slash-reference': 0
+    '@typescript-eslint/triple-slash-reference': 0,
+    '@typescript-eslint/no-empty-function': 0,
+    '@typescript-eslint/no-var-requires': 0
   },
 };

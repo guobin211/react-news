@@ -2,6 +2,19 @@
 
 a template for react
 
+```bash
+    
+    components      纯组件
+    layout          布局
+    models          数据模型
+    pages           业务页面
+    routes          主路由页面
+    shared          共享服务
+    styles          样式
+    utils           工具
+
+```
+
 ## Available Scripts
 
 ### `yarn start`
