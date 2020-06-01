@@ -1,10 +1,6 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import './index.less'
 import 'antd/dist/antd.less'
@@ -18,16 +14,16 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/login">
-          <Login/>
+          <Login />
         </Route>
         <Route path="/visitor">
-          <Visitor/>
+          <Visitor />
         </Route>
         <Route path="/admin">
-          <Admin/>
+          <Admin />
         </Route>
         <Route path="">
-          <Login/>
+          <Login />
         </Route>
       </Switch>
     </BrowserRouter>

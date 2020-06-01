@@ -1,15 +1,13 @@
 import React from 'react'
 import { openModel } from '../shared/ModelService'
 
-export interface FormPageProps {
-}
+export interface FormPageProps {}
 
-export interface FormPageState {
-}
+export interface FormPageState {}
 
 export default class FormPage extends React.Component<FormPageProps, FormPageState> {
   public openModel(text: string) {
-    openModel(text, (e: any) => {
+    openModel(text, (e) => {
       console.log(e)
     })
   }
@@ -18,7 +16,9 @@ export default class FormPage extends React.Component<FormPageProps, FormPageSta
     return (
       <div className="FormPage">
         HELLO FormPage
-        <button type="button" onClick={() => this.openModel('hello')}>open</button>
+        <button type="button" onClick={() => this.openModel('hello')}>
+          open
+        </button>
       </div>
     )
   }
