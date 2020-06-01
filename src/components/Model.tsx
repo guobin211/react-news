@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Model.module.less'
 
 export interface ModelProps {
   text: string
@@ -8,7 +9,7 @@ export interface ModelProps {
 export default class Model extends React.Component<ModelProps> {
   render() {
     return (
-      <div className="Model">
+      <div className={styles.Model}>
         HELLO {this.props.text}
         <button type="button" onClick={() => this.props.close(false)}>
           close
