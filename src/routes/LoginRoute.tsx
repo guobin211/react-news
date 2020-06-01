@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from 'antd'
+import { Unsubscribe } from 'redux'
 import store from '../store'
 import { CountingEnum } from '../store/actions/counting.enum'
-import { Unsubscribe } from 'redux'
 
 export interface LoginRouteProps {}
 
