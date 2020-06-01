@@ -1,0 +1,9 @@
+@startuml
+AppService -> LocalService: bootstrap获取AppState
+LocalService -> UserService: 获取UserInfo
+UserService -> HttpService: 更新Token
+UserService -> LocalService: 更新UserInfo
+LocalService -> AppService: 更新AppState构建路由
+@enduml
+
+

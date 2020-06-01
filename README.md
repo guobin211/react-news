@@ -2,6 +2,13 @@
 
 a template for react
 
+## 启动流程
+
+[![AppStart](https://github.com/guobin211/react-news/blob/react-16/images/start.png)](https://github.com/guobin211/react-news)
+
+
+## 组织结构
+
 ```bash
     
     components      纯组件
@@ -15,7 +22,7 @@ a template for react
 
 ```
 
-## Available Scripts
+## Scripts
 
 ### `yarn start`
 
