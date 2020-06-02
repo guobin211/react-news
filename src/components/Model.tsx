@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Model.module.less'
+import styles from './styles/Model.module.less'
 
 export interface ModelProps {
   text: string

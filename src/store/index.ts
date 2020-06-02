@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from 'redux'
-import counting from './reducers/counting'
+import countState from './reducers/count-reducer'
+import routesState from './reducers/routes-reducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 const rootReducer = combineReducers({
-  counting,
+  countState,
+  routesState,
 })
 const store = createStore(rootReducer, composeWithDevTools())
 export default store

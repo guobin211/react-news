@@ -1,14 +1,16 @@
 import React, { CSSProperties } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Layout } from 'antd'
-import './AdminRoute.css'
+import './styles/AdminRoute.css'
 import AppSide from '../layout/AppSide'
 import AppHeader from '../layout/AppHeader'
+import { RouteConfig } from './index'
+import GroupRoute from '../components/GroupRoute'
 
 const { Content } = Layout
-const FormPage = React.lazy(() => import('../pages/FormPage'))
 
-export interface AdminRouteProps {}
+export interface AdminRouteProps {
+  routes: RouteConfig[]
+}
 
 export interface AdminRouteState {
   collapsed: boolean
@@ -36,13 +38,7 @@ export default class AdminRoute extends React.Component<AdminRouteProps, AdminRo
         <Layout className="site-layout">
           <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
           <Content className="site-layout-background" style={this.contentStyle}>
-            <BrowserRouter>
-              <Switch>
-                <Route path="/admin/form">
-                  <FormPage />
-                </Route>
-              </Switch>
-            </BrowserRouter>
+            <GroupRoute routes={this.props.routes} />
           </Content>
         </Layout>
       </Layout>

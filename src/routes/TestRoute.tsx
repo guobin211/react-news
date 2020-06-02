@@ -4,25 +4,25 @@ import { Unsubscribe } from 'redux'
 import { Button } from 'antd'
 import store from '../store'
 import { LoginRouteProps } from './LoginRoute'
-import { CountingEnum } from '../store/actions/counting.enum'
+import { CountAction } from '../store/actions/count.action'
 
 export interface TestRouteProps {}
 
 export interface TestRouteState {
-  counting: number
+  countState: number
 }
 
 export default class TestRoute extends React.Component<TestRouteProps, TestRouteState> {
   state = {
-    counting: store.getState().counting,
+    countState: store.getState().countState,
   }
   unsubscribe$: Unsubscribe
   constructor(props: LoginRouteProps) {
     super(props)
     this.unsubscribe$ = store.subscribe(() => {
-      const { counting } = store.getState()
+      const { countState } = store.getState()
       this.setState(() => {
-        return { counting }
+        return { countState }
       })
     })
   }
@@ -33,15 +33,15 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
   render() {
     return (
       <div className="TestRoute">
-        <div>HELLO TestPage {this.state.counting}</div>
+        <div>HELLO TestPage {this.state.countState}</div>
         <div>
-          <Button type="default" onClick={() => store.dispatch({ type: CountingEnum.Decrement })}>
+          <Button type="default" onClick={() => store.dispatch({ type: CountAction.Decrement })}>
             Decrement
           </Button>
-          <Button type="primary" onClick={() => store.dispatch({ type: CountingEnum.Increment })}>
+          <Button type="primary" onClick={() => store.dispatch({ type: CountAction.Increment })}>
             Increment
           </Button>
-          <Button type="default" onClick={() => store.dispatch({ type: CountingEnum.Reset })}>
+          <Button type="default" onClick={() => store.dispatch({ type: CountAction.Reset })}>
             Reset
           </Button>
         </div>
