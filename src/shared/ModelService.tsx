@@ -44,6 +44,7 @@ class ModelService {
    * @param div
    */
   private remove(div: HTMLDivElement) {
+    ReactDOM.unmountComponentAtNode(div)
     div.remove()
     this.modelStack.pop()
   }
