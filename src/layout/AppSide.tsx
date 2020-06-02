@@ -22,15 +22,16 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
   defaultSelectedKeys = ['/admin/dashboard/analysis0']
 
   renderMenu(route: RouteNav, key: number) {
+    const icon = route.icon ? route.icon : <UserOutlined />
     if (route.routes && route.routes.length > 0) {
       return (
-        <SubMenu key={route.path + key} icon={<UserOutlined />} title={route.desc}>
+        <SubMenu key={route.path + key} icon={icon} title={route.desc}>
           {route.routes.map((route, index) => this.renderMenu(route, index))}
         </SubMenu>
       )
     } else {
       return (
-        <Menu.Item key={route.path + key} icon={<UserOutlined />}>
+        <Menu.Item key={route.path + key} icon={icon}>
           <Link to={route.path}>{route.desc}</Link>
         </Menu.Item>
       )

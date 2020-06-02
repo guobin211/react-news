@@ -1,13 +1,22 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import {
+  DashboardOutlined,
+  UserOutlined,
+  ExceptionOutlined,
+  ProfileOutlined,
+  UnorderedListOutlined,
+  FormOutlined,
+  SmileOutlined,
+} from '@ant-design/icons'
 import { Account } from '../pages/account'
 import { Dashboard } from '../pages/dashboard'
-import TestRoute from './TestRoute'
 import { Form } from '../pages/form'
 import { List } from '../pages/list'
 import { Profile } from '../pages/profile'
 import { Result } from '../pages/result'
 import { Exception } from '../pages/exception'
+import TestRoute from './TestRoute'
 import GroupRoute from '../components/GroupRoute'
 
 export function setPrefix(father: string, routes: RouteConfig[]) {
@@ -46,7 +55,7 @@ export interface RouteConfig {
   // 导航的标题
   title?: string
   // 侧边栏的图标
-  icon?: string
+  icon?: any
   routes?: RouteConfig[]
 }
 
@@ -65,6 +74,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '仪表盘',
+        icon: <DashboardOutlined />,
         routes: setPrefix('/admin', Dashboard),
       },
       {
@@ -72,6 +82,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '表单页',
+        icon: <FormOutlined />,
         routes: setPrefix('/admin', Form),
       },
       {
@@ -79,6 +90,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '列表页',
+        icon: <UnorderedListOutlined />,
         routes: setPrefix('/admin', List),
       },
       {
@@ -86,6 +98,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '详情页',
+        icon: <ProfileOutlined />,
         routes: setPrefix('/admin', Profile),
       },
       {
@@ -93,6 +106,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '结果页',
+        icon: <SmileOutlined />,
         routes: setPrefix('/admin', Result),
       },
       {
@@ -100,6 +114,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '异常页',
+        icon: <ExceptionOutlined />,
         routes: setPrefix('/admin', Exception),
       },
       {
@@ -107,6 +122,7 @@ export const Routes: RouteConfig[] = [
         component: GroupRoute,
         level: 2,
         desc: '个人页',
+        icon: <UserOutlined />,
         routes: setPrefix('/admin', Account),
       },
     ],
