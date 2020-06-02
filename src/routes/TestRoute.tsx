@@ -31,7 +31,11 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
   open = () => {
     modelService.open({
       title: 'test',
-      body: 'hello test model',
+      body: (
+        <Button type="default" onClick={() => store.dispatch({ type: CountAction.Decrement })}>
+          Decrement
+        </Button>
+      ),
       confirm: () => {
         console.log('confirm')
       },

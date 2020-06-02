@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import './styles/Model.less'
 import { Button } from 'antd'
+import { stopEvent } from '../utils'
 
 export interface ModelProps {
   // 标题
   title?: string | HTMLElement
   // 内容 string | Component
-  body?: any
+  body?: JSX.Element | string | number
   // 底部 string | Component
-  foot?: any
+  foot?: JSX.Element | string | number
   // 确定
   confirm: () => void
   // 取消
   cancel: () => void
   // 显示footer
   showFooter?: boolean
+  // 点击蒙层允许关闭
+  maskClosable?: boolean
 }
 
 export default class Model extends React.Component<ModelProps> {
+  maskClick: MouseEventHandler = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (this.props.maskClosable !== false) {
+      this.props.cancel()
+    }
+  }
   render() {
     return (
-      <div className="model center">
-        <div className="middle">
+      <div className="model center" onClick={this.maskClick}>
+        <div className="middle" onClick={stopEvent}>
           <button type="button" aria-label="Close" className="ant-modal-close">
             <span className="ant-modal-close-x" onClick={this.props.cancel}>
               <span
