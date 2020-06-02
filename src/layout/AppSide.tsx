@@ -31,9 +31,7 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
     } else {
       return (
         <Menu.Item key={route.path + key} icon={<UserOutlined />}>
-          <Link to={route.path} replace>
-            {route.desc}
-          </Link>
+          <Link to={route.path}>{route.desc}</Link>
         </Menu.Item>
       )
     }

@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import { Routes } from './routes'
 import GroupRoute from './components/GroupRoute'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(Loading, document.getElementById('root'))
 
@@ -18,7 +19,9 @@ appService
     ReactDOM.render(
       <Provider store={store}>
         <Suspense fallback={Loading}>
-          <GroupRoute routes={Routes} />
+          <BrowserRouter>
+            <GroupRoute routes={Routes} />
+          </BrowserRouter>
         </Suspense>
       </Provider>,
       document.getElementById('root')

@@ -25,11 +25,6 @@ export default class AdminRoute extends React.Component<AdminRouteProps, AdminRo
       collapsed: !this.state.collapsed,
     })
   }
-  contentStyle: CSSProperties = {
-    margin: '24px 16px',
-    padding: 24,
-    minHeight: 280,
-  }
 
   render() {
     return (
@@ -37,7 +32,7 @@ export default class AdminRoute extends React.Component<AdminRouteProps, AdminRo
         <AppSide collapsed={this.state.collapsed} />
         <Layout className="site-layout">
           <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
-          <Content className="site-layout-background" style={this.contentStyle}>
+          <Content className="site-layout-background">
             <GroupRoute routes={this.props.routes} />
           </Content>
         </Layout>
