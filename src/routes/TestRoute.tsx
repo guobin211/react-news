@@ -5,6 +5,7 @@ import { Button } from 'antd'
 import store from '../store'
 import { LoginRouteProps } from './LoginRoute'
 import { CountAction } from '../store/actions/count.action'
+import modelService from '../shared/ModelService'
 
 export interface TestRouteProps {}
 
@@ -24,6 +25,19 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
       this.setState(() => {
         return { countState }
       })
+    })
+  }
+
+  open = () => {
+    modelService.open({
+      title: 'test',
+      body: 'hello test model',
+      confirm: () => {
+        console.log('confirm')
+      },
+      cancel: () => {
+        console.log('cancel')
+      },
     })
   }
   componentWillUnmount() {
@@ -47,6 +61,11 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
         </div>
         <div>
           <Link to="/login">login</Link>
+        </div>
+        <div>
+          <Button type="default" onClick={this.open}>
+            Open Dialog
+          </Button>
         </div>
       </div>
     )
