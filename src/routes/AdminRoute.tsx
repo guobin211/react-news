@@ -28,12 +28,14 @@ export default class AdminRoute extends React.Component<AdminRouteProps, AdminRo
 
   render() {
     return (
-      <Layout>
+      <Layout className="ant-pro-basicLayout">
         <AppSide collapsed={this.state.collapsed} />
-        <Layout className="site-layout">
+        <Layout>
           <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
           <Content className="site-layout-background">
-            <GroupRoute routes={this.props.routes} />
+            <div className="ant-pro-basicLayout-content">
+              <GroupRoute routes={this.props.routes} />
+            </div>
           </Content>
         </Layout>
       </Layout>

@@ -16,6 +16,12 @@
   margin: 16px;
 }
 
-.site-layout .site-layout-background {
+.ant-pro-global-header{
   background: #fff;
+}
+
+.ant-pro-basicLayout-content {
+  position: relative;
+  margin: 24px;
+  transition: all .2s;
 }

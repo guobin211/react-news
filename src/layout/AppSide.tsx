@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
@@ -21,6 +21,10 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
   }
   defaultSelectedKeys = ['/admin/dashboard/analysis0']
 
+  side: CSSProperties = {
+    minHeight: '100vh',
+  }
+
   renderMenu(route: RouteNav, key: number) {
     const icon = route.icon ? route.icon : <UserOutlined />
     if (route.routes && route.routes.length > 0) {
@@ -40,7 +44,7 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
 
   render() {
     return (
-      <Layout.Sider trigger={null} collapsible collapsed={this.props.collapsed}>
+      <Layout.Sider trigger={null} collapsible collapsed={this.props.collapsed} style={this.side}>
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={this.defaultSelectedKeys}>
           {this.state.routes.map((route, index) => this.renderMenu(route, index))}

@@ -4,16 +4,16 @@ import { Button } from 'antd'
 import { stopEvent } from '../utils'
 
 export interface ModelProps {
-  // 标题
-  title?: string | HTMLElement
-  // 内容 string | Component
-  body?: JSX.Element | string | number
-  // 底部 string | Component
-  foot?: JSX.Element | string | number
   // 确定
   confirm: () => void
   // 取消
   cancel: () => void
+  // 标题
+  title?: string | HTMLElement
+  // 内容 string | Component
+  body?: React.FC | React.Component | JSX.Element | string | number
+  // 底部 string | Component
+  foot?: React.FC | React.Component | JSX.Element | string | number
   // 显示footer
   showFooter?: boolean
   // 点击蒙层允许关闭
