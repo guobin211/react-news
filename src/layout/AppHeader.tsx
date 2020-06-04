@@ -15,7 +15,7 @@ export default class AppHeader extends React.Component<AppHeaderProps, AppHeader
       <Layout.Header className="ant-pro-global-header" style={{ padding: 0 }}>
         {React.createElement(this.props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
           className: 'trigger',
-          onClick: this.props.toggle,
+          onClick: this.props.toggle
         })}
       </Layout.Header>
     )

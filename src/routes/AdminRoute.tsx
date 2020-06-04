@@ -18,11 +18,11 @@ export interface AdminRouteState {
 
 export default class AdminRoute extends React.Component<AdminRouteProps, AdminRouteState> {
   state = {
-    collapsed: false,
+    collapsed: false
   }
   toggle = () => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsed: !this.state.collapsed
     })
   }
 

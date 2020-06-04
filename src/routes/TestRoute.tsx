@@ -15,7 +15,7 @@ export interface TestRouteState {
 
 export default class TestRoute extends React.Component<TestRouteProps, TestRouteState> {
   state = {
-    countState: store.getState().countState,
+    countState: store.getState().countState
   }
   unsubscribe$: Unsubscribe
   constructor(props: LoginRouteProps) {
@@ -41,7 +41,7 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
       },
       cancel: () => {
         console.log('cancel')
-      },
+      }
     })
   }
   componentWillUnmount() {

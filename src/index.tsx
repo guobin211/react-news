@@ -11,7 +11,8 @@ import { Routes } from './routes'
 import GroupRoute from './components/GroupRoute'
 import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(Loading, document.getElementById('root'))
+const rootElement = document.getElementById('root') as HTMLElement
+ReactDOM.render(Loading, rootElement)
 
 appService
   .bootstrap()
@@ -24,7 +25,7 @@ appService
           </BrowserRouter>
         </Suspense>
       </Provider>,
-      document.getElementById('root')
+      rootElement
     )
   })
   .catch()

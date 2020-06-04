@@ -1,6 +1,6 @@
 export enum LocalEnum {
   AppState = 'AppState',
-  UserInfo = 'UserInfo',
+  UserInfo = 'UserInfo'
 }
 
 export class LocalService {

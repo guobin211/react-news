@@ -7,7 +7,7 @@ import {
   ProfileOutlined,
   UnorderedListOutlined,
   FormOutlined,
-  SmileOutlined,
+  SmileOutlined
 } from '@ant-design/icons'
 import { Account } from '../pages/account'
 import { Dashboard } from '../pages/dashboard'
@@ -75,7 +75,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '仪表盘',
         icon: <DashboardOutlined />,
-        routes: setPrefix('/admin', Dashboard),
+        routes: setPrefix('/admin', Dashboard)
       },
       {
         path: '/admin/form',
@@ -83,7 +83,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '表单页',
         icon: <FormOutlined />,
-        routes: setPrefix('/admin', Form),
+        routes: setPrefix('/admin', Form)
       },
       {
         path: '/admin/list',
@@ -91,7 +91,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '列表页',
         icon: <UnorderedListOutlined />,
-        routes: setPrefix('/admin', List),
+        routes: setPrefix('/admin', List)
       },
       {
         path: '/admin/profile',
@@ -99,7 +99,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '详情页',
         icon: <ProfileOutlined />,
-        routes: setPrefix('/admin', Profile),
+        routes: setPrefix('/admin', Profile)
       },
       {
         path: '/admin/result',
@@ -107,7 +107,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '结果页',
         icon: <SmileOutlined />,
-        routes: setPrefix('/admin', Result),
+        routes: setPrefix('/admin', Result)
       },
       {
         path: '/admin/exception',
@@ -115,7 +115,7 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '异常页',
         icon: <ExceptionOutlined />,
-        routes: setPrefix('/admin', Exception),
+        routes: setPrefix('/admin', Exception)
       },
       {
         path: '/admin/account',
@@ -123,24 +123,24 @@ export const Routes: RouteConfig[] = [
         level: 2,
         desc: '个人页',
         icon: <UserOutlined />,
-        routes: setPrefix('/admin', Account),
-      },
-    ],
+        routes: setPrefix('/admin', Account)
+      }
+    ]
   },
   {
     path: '/visitor',
     component: React.lazy(() => import('./VisitorRoute')),
     level: 1,
     desc: '游客平台',
-    routes: [],
+    routes: []
   },
   {
     path: '/login',
     component: React.lazy(() => import('./LoginRoute')),
     level: 1,
     desc: '登录注册',
-    routes: [],
+    routes: []
   },
   { path: '/test', level: 1, desc: '测试', component: TestRoute, routes: [] },
-  { path: '*', level: 1, desc: '测试', component: TestRoute, routes: [] },
+  { path: '*', level: 1, desc: '测试', component: TestRoute, routes: [] }
 ]

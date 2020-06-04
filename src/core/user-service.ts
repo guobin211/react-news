@@ -10,14 +10,13 @@ export abstract class BaseUserService<T> {
 }
 
 export class UserService implements BaseUserService<UserVM> {
-  private token = ''
-
-  setToken(token: string) {
-    this.token = token
+  private _token = ''
+  set token(token: string) {
+    this._token = token
   }
 
-  getToken() {
-    return this.token
+  get token() {
+    return this._token
   }
 
   constructor() {

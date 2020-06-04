@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 const rootReducer = combineReducers({
   countState,
-  routesState,
+  routesState
 })
 const store = createStore(rootReducer, composeWithDevTools())
 export default store

@@ -17,12 +17,12 @@ export interface AppSideState {
 
 export default class AppSide extends React.Component<AppSideProps, AppSideState> {
   state = {
-    routes: store.getState().routesState,
+    routes: store.getState().routesState
   }
   defaultSelectedKeys = ['/admin/dashboard/analysis0']
 
   side: CSSProperties = {
-    minHeight: '100vh',
+    minHeight: '100vh'
   }
 
   renderMenu(route: RouteNav, key: number) {

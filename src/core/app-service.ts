@@ -12,7 +12,7 @@ export class AppService {
     version: '',
     i18n: 'zh',
     theme: '',
-    token: '',
+    token: ''
   }
   /**
    * 获取本地信息

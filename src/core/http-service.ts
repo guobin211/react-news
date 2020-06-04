@@ -34,6 +34,7 @@ export class HttpService {
   private unCancelUrls: string[]
   private pending = new Map<string, Canceler>()
   private readonly baseUrl: string
+
   constructor(config: HttpConfig) {
     this.baseUrl = config.baseURL || window.location.host
     this.unCancelUrls = config.unCancelUrls || []
@@ -46,7 +47,7 @@ export class HttpService {
         ? config.paramsSerializer
         : (params) => {
             return Qs.stringify(params, { arrayFormat: 'repeat' })
-          },
+          }
     })
     this.initInterceptors()
   }
@@ -84,8 +85,8 @@ export class HttpService {
    * @param config
    */
   private removePending(config: AxiosRequestConfig) {
-    const p = this.getRequestKey(config)
-    const c = this.pending.get(p) as Canceler
+    const p: string = this.getRequestKey(config)
+    const c = this.pending.get(p)
     if (c) {
       c()
       this.pending.delete(p)
@@ -109,12 +110,11 @@ export class HttpService {
 }
 
 const requestHandler: RequestInterceptor = (config) => {
-  config.headers['Token'] = userService.getToken()
+  config.headers['Token'] = userService.token
   return config
 }
-
 export const httpService: AxiosInstance = new HttpService({
   baseURL: 'http://127.0.0.1:3000/api',
   timeout: 90000,
-  requestInterceptors: [requestHandler],
+  requestInterceptors: [requestHandler]
 }).getInstance()

@@ -4,5 +4,5 @@
 export enum HttpCode {
   Error = 0,
   Success = 1,
-  Permission = 3,
+  Permission = 3
 }

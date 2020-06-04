@@ -9,24 +9,24 @@ export const List: RouteConfig[] = [
     component: GroupRoute,
     desc: '搜索页',
     level: 3,
-    routes: Search,
+    routes: Search
   },
   {
     path: '/list/basic',
     component: React.lazy(() => import('./BasicListPage')),
     desc: '基础列表',
-    level: 3,
+    level: 3
   },
   {
     path: '/list/card',
     component: React.lazy(() => import('./CardListPage')),
     desc: '卡片页',
-    level: 3,
+    level: 3
   },
   {
     path: '/list/table',
     component: React.lazy(() => import('./TableListPage')),
     desc: '表格页',
-    level: 3,
-  },
+    level: 3
+  }
 ]

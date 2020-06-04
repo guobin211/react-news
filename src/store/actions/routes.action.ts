@@ -1,4 +1,4 @@
 export enum RoutesAction {
   Update,
-  Reset,
+  Reset
 }
