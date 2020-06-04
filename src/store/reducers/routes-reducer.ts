@@ -1,4 +1,4 @@
-import { RouteConfig, Routes } from '../../routes'
+import { RouteConfig, Routes } from '@/routes'
 import { RoutesAction } from '../actions/routes.action'
 
 export type RouteNav = Pick<RouteConfig, 'path' | 'desc' | 'level' | 'title' | 'icon' | 'routes'>

@@ -1,4 +1,4 @@
-import { UserVM } from '../models'
+import { UserVM } from '@/models'
 import { httpService } from './http-service'
 import { LocalEnum, localService } from './local-service'
 

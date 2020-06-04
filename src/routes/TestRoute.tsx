@@ -4,7 +4,7 @@ import { Unsubscribe } from 'redux'
 import { Button } from 'antd'
 import store from '../store'
 import { LoginRouteProps } from './LoginRoute'
-import { CountAction } from '../store/actions/count.action'
+import { CountAction } from '@/store/actions/count.action'
 import modelService from '../shared/ModelService'
 
 export interface TestRouteProps {}

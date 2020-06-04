@@ -1,7 +1,7 @@
 import React from 'react'
-import { RouteConfig } from '../../routes'
+import { RouteConfig } from '@/routes'
+import GroupRoute from '@/components/GroupRoute'
 import { Search } from './search'
-import GroupRoute from '../../components/GroupRoute'
 
 export const List: RouteConfig[] = [
   {

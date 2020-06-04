@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react'
 import './styles/Model.less'
 import { Button } from 'antd'
-import { stopEvent } from '../utils'
+import { stopEvent } from '@/utils'
 
 export interface ModelProps {
   // 确定

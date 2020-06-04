@@ -9,15 +9,16 @@ import {
   FormOutlined,
   SmileOutlined
 } from '@ant-design/icons'
-import { Account } from '../pages/account'
-import { Dashboard } from '../pages/dashboard'
-import { Form } from '../pages/form'
-import { List } from '../pages/list'
-import { Profile } from '../pages/profile'
-import { Result } from '../pages/result'
-import { Exception } from '../pages/exception'
+import { Account } from '@/pages/account'
+import { Dashboard } from '@/pages/dashboard'
+import { Form } from '@/pages/form'
+import { List } from '@/pages/list'
+import { Profile } from '@/pages/profile'
+import { Result } from '@/pages/result'
+import { Exception } from '@/pages/exception'
 import TestRoute from './TestRoute'
 import GroupRoute from '../components/GroupRoute'
+import Graph from '../pages/graph'
 
 export function setPrefix(father: string, routes: RouteConfig[]) {
   for (const route of routes) {
@@ -65,7 +66,7 @@ export interface RouteConfig {
 export const Routes: RouteConfig[] = [
   {
     path: '/admin',
-    component: React.lazy(() => import('./AdminRoute')),
+    component: React.lazy(() => import('./platform/AdminRoute')),
     level: 1,
     desc: '管理平台',
     routes: [
@@ -124,12 +125,20 @@ export const Routes: RouteConfig[] = [
         desc: '个人页',
         icon: <UserOutlined />,
         routes: setPrefix('/admin', Account)
+      },
+      {
+        path: '/admin/graph',
+        component: GroupRoute,
+        level: 2,
+        desc: '个人页',
+        icon: <UserOutlined />,
+        routes: setPrefix('/admin', Graph)
       }
     ]
   },
   {
     path: '/visitor',
-    component: React.lazy(() => import('./VisitorRoute')),
+    component: React.lazy(() => import('./platform/VisitorRoute')),
     level: 1,
     desc: '游客平台',
     routes: []

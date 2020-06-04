@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouteConfig } from '../../routes'
+import { RouteConfig } from '@/routes'
 
 export const Analysis = React.lazy(() => import('./AnalysisPage'))
 export const Monitor = React.lazy(() => import('./MonitorPage'))
