@@ -130,7 +130,7 @@ export const Routes: RouteConfig[] = [
         path: '/admin/graph',
         component: GroupRoute,
         level: 2,
-        desc: '个人页',
+        desc: '图结构',
         icon: <UserOutlined />,
         routes: setPrefix('/admin', Graph)
       }

@@ -11,6 +11,7 @@
     "server": "node scripts/server.js"
   },
   "dependencies": {
+    "@antv/g6": "^3.5.1",
     "antd": "^4.2.5",
     "axios": "^0.19.2",
     "qs": "^6.9.4",
