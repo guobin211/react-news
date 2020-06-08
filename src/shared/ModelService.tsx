@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Model, { ModelProps } from '../components/Model'
-import { Stack } from '../utils/Stack'
+import { Stack } from '@/utils/Stack'
 
 class ModelService {
   private modelStack: Stack<HTMLDivElement>
