@@ -31,12 +31,7 @@ export function setPrefix(father: string, routes: RouteConfig[]) {
 }
 
 export function RouteWithSubRoutes(route: RouteConfig) {
-  return (
-    <Route
-      path={route.path}
-      render={(props) => <route.component {...props} routes={route.routes} />}
-    />
-  )
+  return <Route path={route.path} render={(props) => <route.component {...props} routes={route.routes} />} />
 }
 
 /**

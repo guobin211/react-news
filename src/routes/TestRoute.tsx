@@ -6,6 +6,8 @@ import store from '../store'
 import { LoginRouteProps } from './LoginRoute'
 import { CountAction } from '@/store/actions/count.action'
 import modelService from '../shared/ModelService'
+import HOC from '@/components/HOC'
+import MyHooks from '@/components/MyHooks'
 
 export interface TestRouteProps {}
 
@@ -70,6 +72,10 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
           <Button type="default" onClick={this.open}>
             Open Dialog
           </Button>
+        </div>
+        <div>
+          <HOC />
+          <MyHooks />
         </div>
       </div>
     )
