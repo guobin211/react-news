@@ -34,11 +34,7 @@ export default class Model extends React.Component<ModelProps> {
         <div className="middle" onClick={stopEvent}>
           <button type="button" aria-label="Close" className="ant-modal-close">
             <span className="ant-modal-close-x" onClick={this.props.cancel}>
-              <span
-                role="img"
-                aria-label="close"
-                className="anticon anticon-close ant-modal-close-icon"
-              >
+              <span role="img" aria-label="close" className="anticon anticon-close ant-modal-close-icon">
                 <svg
                   viewBox="64 64 896 896"
                   focusable="false"
