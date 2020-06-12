@@ -106,6 +106,7 @@ class BlogList extends React.Component<any, any> {
 /**
  * 业务组件
  * 视图 + 数据
+ * 自动订阅数据和取消订阅
  */
 const CommentListWithSubscription = withSubscription(CommentList, (DataSource) => DataSource.getComments())
 

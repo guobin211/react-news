@@ -8,6 +8,7 @@ import { CountAction } from '@/store/actions/count.action'
 import modelService from '../shared/ModelService'
 import HOC from '@/components/HOC'
 import MyHooks from '@/components/MyHooks'
+import ReduxHOC from '@/components/ReduxHOC'
 
 export interface TestRouteProps {}
 
@@ -76,6 +77,7 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
         <div>
           <HOC />
           <MyHooks />
+          <ReduxHOC />
         </div>
       </div>
     )

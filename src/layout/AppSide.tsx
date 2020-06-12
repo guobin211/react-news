@@ -46,7 +46,7 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
       <Layout.Sider trigger={null} collapsible collapsed={this.props.collapsed} style={this.side}>
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={this.defaultSelectedKeys}>
-          {this.state.routes.map((route) => this.renderMenu(route))}
+          {this.state.routes.map((r) => this.renderMenu(r))}
         </Menu>
       </Layout.Sider>
     )
