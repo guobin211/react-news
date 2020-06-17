@@ -6,7 +6,7 @@ a template for react
 
 ## 启动流程
 
-[![AppStart](https://github.com/guobin211/react-news/blob/react-16/images/start.png)](https://github.com/guobin211/react-news)
+[![AppStart](https://github.com/guobin211/react-news/blob/master/images/start.png)](https://github.com/guobin211/react-news)
 
 
 ## 组织结构
