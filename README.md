@@ -1,6 +1,6 @@
-# Ant Design And Typescript Project For React 16.x
+# Ant Design And Typescript
 
-a template for react
+a template for react, just play ~
 
 > 2020Hooks重构版
 
