@@ -1,6 +1,7 @@
 import React from 'react'
 import MyState from '@/components/MyState'
 import SvgRef from '@/components/SvgRef'
+import WithZoom from '@/components/WithZoom'
 
 export interface TestRouteProps {}
 
