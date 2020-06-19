@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 interface IDataSource {
   _listener: VoidFn[]
@@ -16,8 +16,8 @@ type ReactComponent = typeof React.Component
  * 数据源
  */
 const DataSource: IDataSource = {
-  _blogs: ['blogs1', 'blogs2'],
-  _comments: ['comments1', 'comments2'],
+  _blogs: ["blogs1", "blogs2"],
+  _comments: ["comments1", "comments2"],
   _listener: [],
   addChangeListener: function (fn: VoidFn) {
     this._listener.push(fn)
@@ -33,7 +33,7 @@ const DataSource: IDataSource = {
   }
 }
 function getDisplayName(WrappedComponent: any) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  return WrappedComponent.displayName || WrappedComponent.name || "Component"
 }
 
 /**
@@ -80,7 +80,7 @@ class CommentList extends React.Component<any, any> {
     return this.props.data
       ? this.props.data.map((s: string, index: number) => {
           return (
-            <p style={{ color: 'red' }} key={index}>
+            <p style={{ color: "red" }} key={index}>
               {s}
             </p>
           )
@@ -94,7 +94,7 @@ class BlogList extends React.Component<any, any> {
     return this.props.data
       ? this.props.data.map((s: any, index: number) => {
           return (
-            <p style={{ color: 'darkblue' }} key={index}>
+            <p style={{ color: "darkblue" }} key={index}>
               {s}
             </p>
           )

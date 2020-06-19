@@ -15,42 +15,42 @@ type PersonKeys = keyof Person
 
 // 可选操作
 const jack: Partial<Person> = {
-  name: 'jack',
+  name: "jack",
   age: 22
 }
 // 必选操作
 const jams: Required<Partial<Person>> = {
-  name: 'jams',
+  name: "jams",
   age: 11,
-  city: 'usa'
+  city: "usa"
 }
 
 interface PageInfo {
   title: string
 }
 
-type Page = 'home' | 'about' | 'contact'
+type Page = "home" | "about" | "contact"
 // 组合记录属性
 const spa: Record<Page, PageInfo> = {
-  home: { title: 'home' },
-  about: { title: 'about' },
-  contact: { title: 'contact' }
+  home: { title: "home" },
+  about: { title: "about" },
+  contact: { title: "contact" }
 }
 
 // 提取
-type User = Pick<Person, 'name' | 'age'>
+type User = Pick<Person, "name" | "age">
 const mary: User = {
-  name: 'nary',
+  name: "nary",
   age: 22
 }
 // 排除
-type UserName = Omit<Person, 'age' | 'city'>
+type UserName = Omit<Person, "age" | "city">
 const tom: UserName = {
-  name: 'tom'
+  name: "tom"
 }
 // 排除
-type nameAge = Exclude<PersonKeys, 'name' | 'age'>
-const tony: nameAge = 'city'
+type nameAge = Exclude<PersonKeys, "name" | "age">
+const tony: nameAge = "city"
 // Parameters参数类型推断
 declare function f1(arg: { a: number; b: string }): void
 // [{ a: number, b: string }]

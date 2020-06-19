@@ -1,7 +1,7 @@
-import axios, { AxiosRequestConfig, AxiosResponse, Canceler } from 'axios'
-import { AxiosInstance } from 'axios'
-import * as Qs from 'qs'
-import { userService } from './user-service'
+import axios, { AxiosRequestConfig, AxiosResponse, Canceler } from "axios"
+import { AxiosInstance } from "axios"
+import * as Qs from "qs"
+import { userService } from "./user-service"
 
 export type RequestInterceptor = (config: AxiosRequestConfig) => AxiosRequestConfig
 export type ResponseInterceptor = (config: AxiosResponse) => AxiosResponse
@@ -46,7 +46,7 @@ export class HttpService {
       paramsSerializer: config.paramsSerializer
         ? config.paramsSerializer
         : (params) => {
-            return Qs.stringify(params, { arrayFormat: 'repeat' })
+            return Qs.stringify(params, { arrayFormat: "repeat" })
           }
     })
     this.initInterceptors()
@@ -110,11 +110,11 @@ export class HttpService {
 }
 
 const requestHandler: RequestInterceptor = (config) => {
-  config.headers['Token'] = userService.token
+  config.headers["Token"] = userService.token
   return config
 }
 export const httpService: AxiosInstance = new HttpService({
-  baseURL: 'http://127.0.0.1:3000/api',
+  baseURL: "http://127.0.0.1:3000/api",
   timeout: 90000,
   requestInterceptors: [requestHandler]
 }).getInstance()

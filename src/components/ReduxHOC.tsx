@@ -4,19 +4,19 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project react-news
  */
-import withAjax from '@/utils/with-ajax'
-import React from 'react'
-import { BookVm } from '@/store/types/book.vm'
-import store from '@/store'
-import { BooksAction } from '@/store/actions/books.action'
+import withAjax from "@/utils/with-ajax"
+import React from "react"
+import { BookVm } from "@/store/types/book.vm"
+import store from "@/store"
+import { BooksAction } from "@/store/actions/books.action"
 
 const style = {
   book: {
-    color: 'darkblue',
+    color: "darkblue",
     fontSize: 16
   },
   list: {
-    background: '#ccc'
+    background: "#ccc"
   }
 }
 // 测试dispatch更新数据
@@ -43,7 +43,7 @@ const BookListView: React.FC<any> = (props: { data: BookVm[] }) => {
   return <ul style={style.list}>{props.data.map((el, index) => bookItem(el, index))}</ul>
 }
 
-BookListView.displayName = 'BookListView'
+BookListView.displayName = "BookListView"
 
 const ReduxHOC = withAjax(BookListView, select)
 

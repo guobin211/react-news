@@ -3,5 +3,5 @@ export function getMaxNum(arr: number[]) {
 }
 
 export function isDev() {
-  return process.env.NODE_ENV !== 'production'
+  return process.env.NODE_ENV !== "production"
 }

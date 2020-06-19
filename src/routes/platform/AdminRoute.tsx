@@ -1,10 +1,10 @@
-import React from 'react'
-import { Layout } from 'antd'
-import '../styles/AdminRoute.css'
-import AppSide from '@/layout/AppSide'
-import AppHeader from '@/layout/AppHeader'
-import { RouteConfig } from '../index'
-import GroupRoute from '@/components/GroupRoute'
+import React from "react"
+import { Layout } from "antd"
+import "../styles/AdminRoute.css"
+import AppSide from "@/layout/AppSide"
+import AppHeader from "@/layout/AppHeader"
+import { RouteConfig } from "../index"
+import GroupRoute from "@/components/GroupRoute"
 
 const { Content } = Layout
 

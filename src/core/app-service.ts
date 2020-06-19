@@ -1,4 +1,4 @@
-import { LocalEnum, localService } from './local-service'
+import { LocalEnum, localService } from "./local-service"
 
 interface AppState {
   version: string
@@ -9,10 +9,10 @@ interface AppState {
 
 export class AppService {
   private appState: AppState = {
-    version: '',
-    i18n: 'zh',
-    theme: '',
-    token: ''
+    version: "",
+    i18n: "zh",
+    theme: "",
+    token: ""
   }
   /**
    * 获取本地信息

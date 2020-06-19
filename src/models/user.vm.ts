@@ -1,4 +1,4 @@
-import { BaseVM } from './base.vm'
+import { BaseVM } from "./base.vm"
 
 export interface UserVM extends BaseVM {
   username: string
@@ -8,9 +8,9 @@ export interface UserVM extends BaseVM {
 
 export function getUser(): UserVM {
   const user = {} as UserVM
-  user.id = ''
-  user.createTime = ''
-  user.username = ''
-  user.password = ''
+  user.id = ""
+  user.createTime = ""
+  user.username = ""
+  user.password = ""
   return user
 }

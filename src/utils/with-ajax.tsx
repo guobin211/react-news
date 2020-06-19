@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { Store, Unsubscribe } from 'redux'
-import store from '@/store'
+import React, { FC } from "react"
+import { Store, Unsubscribe } from "redux"
+import store from "@/store"
 
 /**
  *  with-ajax.tsx redux订阅数据
@@ -45,7 +45,7 @@ function withAjax<T>(WrapComponent: ReactComponent, selectData: SelectFn<T>) {
 }
 
 function getDisplayName(WrappedComponent: any) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  return WrappedComponent.displayName || WrappedComponent.name || "Component"
 }
 
 type ReactComponent = typeof React.Component | FC<any>

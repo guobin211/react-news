@@ -1,6 +1,6 @@
-import React from 'react'
-import { Layout } from 'antd'
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
+import React from "react"
+import { Layout } from "antd"
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
 
 export interface AppHeaderProps {
   collapsed: boolean
@@ -14,7 +14,7 @@ export default class AppHeader extends React.Component<AppHeaderProps, AppHeader
     return (
       <Layout.Header className="ant-pro-global-header" style={{ padding: 0 }}>
         {React.createElement(this.props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-          className: 'trigger',
+          className: "trigger",
           onClick: this.props.toggle
         })}
       </Layout.Header>

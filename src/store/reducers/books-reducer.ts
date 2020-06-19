@@ -1,5 +1,5 @@
-import { BookVm } from '@/store/types/book.vm'
-import { BooksAction } from '@/store/actions/books.action'
+import { BookVm } from "@/store/types/book.vm"
+import { BooksAction } from "@/store/actions/books.action"
 
 /**
  *  books-reducer.ts
@@ -8,8 +8,8 @@ import { BooksAction } from '@/store/actions/books.action'
  * @Project react-news
  */
 const books: BookVm[] = [
-  { id: '1', name: '物种起源', year: '2020' },
-  { id: '2', name: '万有引力', year: '2020' }
+  { id: "1", name: "物种起源", year: "2020" },
+  { id: "2", name: "万有引力", year: "2020" }
 ]
 
 const booksState = (state = books, action: { type: BooksAction; data?: BookVm[] }) => {

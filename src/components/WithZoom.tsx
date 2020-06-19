@@ -5,8 +5,8 @@
  * @Project react-news
  */
 
-import React, { useEffect } from 'react'
-import Panzoom from '@panzoom/panzoom'
+import React, { useEffect } from "react"
+import Panzoom from "@panzoom/panzoom"
 
 export interface WithZoomProps {
   children: any
@@ -21,7 +21,7 @@ const WithZoom = (props: WithZoomProps) => {
         minScale: 1,
         maxScale: 5
       })
-      refParent.current?.addEventListener('wheel', panZoom.zoomWithWheel)
+      refParent.current?.addEventListener("wheel", panZoom.zoomWithWheel)
     }
   }, [refChild, refParent])
   return (

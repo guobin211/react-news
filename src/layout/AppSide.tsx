@@ -1,9 +1,9 @@
-import React, { CSSProperties } from 'react'
-import { Link } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
-import store from '../store'
-import { RouteNav } from '@/store/reducers/routes-reducer'
+import React, { CSSProperties } from "react"
+import { Link } from "react-router-dom"
+import { Layout, Menu } from "antd"
+import { UserOutlined } from "@ant-design/icons"
+import store from "../store"
+import { RouteNav } from "@/store/reducers/routes-reducer"
 
 const { SubMenu } = Menu
 
@@ -19,9 +19,9 @@ export default class AppSide extends React.Component<AppSideProps, AppSideState>
   state = {
     routes: store.getState().routesState
   }
-  defaultSelectedKeys = ['/admin/dashboard/analysis']
+  defaultSelectedKeys = ["/admin/dashboard/analysis"]
   side: CSSProperties = {
-    minHeight: '100vh'
+    minHeight: "100vh"
   }
 
   renderMenu(route: RouteNav) {

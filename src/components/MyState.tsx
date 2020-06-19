@@ -4,16 +4,16 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project react-news
  */
-import React from 'react'
-import store from '@/store'
-import { Unsubscribe } from 'redux'
-import modelService from '@/shared/ModelService'
-import { Button } from 'antd'
-import { CountAction } from '@/store/actions/count.action'
-import { Link } from 'react-router-dom'
-import HOC from '@/components/HOC'
-import MyHooks from '@/components/MyHooks'
-import ReduxHOC from '@/components/ReduxHOC'
+import React from "react"
+import store from "@/store"
+import { Unsubscribe } from "redux"
+import modelService from "@/shared/ModelService"
+import { Button } from "antd"
+import { CountAction } from "@/store/actions/count.action"
+import { Link } from "react-router-dom"
+import HOC from "@/components/HOC"
+import MyHooks from "@/components/MyHooks"
+import ReduxHOC from "@/components/ReduxHOC"
 
 export interface StateTestProps {}
 
@@ -38,17 +38,17 @@ class MyState extends React.Component<StateTestProps, StateTestState> {
 
   open = () => {
     modelService.open({
-      title: 'test',
+      title: "test",
       body: (
         <Button type="default" onClick={() => store.dispatch({ type: CountAction.Decrement })}>
           Decrement
         </Button>
       ),
       confirm: () => {
-        console.log('confirm')
+        console.log("confirm")
       },
       cancel: () => {
-        console.log('cancel')
+        console.log("cancel")
       }
     })
   }

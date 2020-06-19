@@ -1,6 +1,6 @@
-import React from 'react'
-import { Switch } from 'react-router-dom'
-import { RouteConfig, RouteWithSubRoutes } from '../routes'
+import React from "react"
+import { Switch } from "react-router-dom"
+import { RouteConfig, RouteWithSubRoutes } from "../routes"
 
 export interface GroupRouteProps {
   routes: RouteConfig[]

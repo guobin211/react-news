@@ -4,20 +4,20 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project react-news
  */
-import * as React from 'react'
-import Panzoom from '@panzoom/panzoom'
-import { useEffect } from 'react'
+import * as React from "react"
+import Panzoom from "@panzoom/panzoom"
+import { useEffect } from "react"
 
 function SvgComponent(props: React.SVGProps<SVGSVGElement>, svgRef?: React.Ref<SVGSVGElement>) {
-  const _props = { ...props, id: 'svg-warp' }
+  const _props = { ...props, id: "svg-warp" }
 
   useEffect(() => {
-    const elem = document.getElementById('svg-warp') as HTMLElement
+    const elem = document.getElementById("svg-warp") as HTMLElement
     const panZoom = Panzoom(elem, {
       minScale: 1,
       maxScale: 5
     })
-    elem.parentElement?.addEventListener('wheel', panZoom.zoomWithWheel)
+    elem.parentElement?.addEventListener("wheel", panZoom.zoomWithWheel)
     panZoom.zoom(2, { animate: true })
   })
 

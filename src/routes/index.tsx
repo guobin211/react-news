@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
+import React from "react"
+import { Route } from "react-router-dom"
 import {
   DashboardOutlined,
   UserOutlined,
@@ -8,17 +8,17 @@ import {
   UnorderedListOutlined,
   FormOutlined,
   SmileOutlined
-} from '@ant-design/icons'
-import { Account } from '@/pages/account'
-import { Dashboard } from '@/pages/dashboard'
-import { Form } from '@/pages/form'
-import { List } from '@/pages/list'
-import { Profile } from '@/pages/profile'
-import { Result } from '@/pages/result'
-import { Exception } from '@/pages/exception'
-import TestRoute from './TestRoute'
-import GroupRoute from '../components/GroupRoute'
-import Graph from '../pages/graph'
+} from "@ant-design/icons"
+import { Account } from "@/pages/account"
+import { Dashboard } from "@/pages/dashboard"
+import { Form } from "@/pages/form"
+import { List } from "@/pages/list"
+import { Profile } from "@/pages/profile"
+import { Result } from "@/pages/result"
+import { Exception } from "@/pages/exception"
+import TestRoute from "./TestRoute"
+import GroupRoute from "../components/GroupRoute"
+import Graph from "../pages/graph"
 
 export function setPrefix(father: string, routes: RouteConfig[]) {
   for (const route of routes) {
@@ -60,91 +60,91 @@ export interface RouteConfig {
  */
 export const Routes: RouteConfig[] = [
   {
-    path: '/admin',
-    component: React.lazy(() => import('./platform/AdminRoute')),
+    path: "/admin",
+    component: React.lazy(() => import("./platform/AdminRoute")),
     level: 1,
-    desc: '管理平台',
+    desc: "管理平台",
     routes: [
       {
-        path: '/admin/dashboard',
+        path: "/admin/dashboard",
         component: GroupRoute,
         level: 2,
-        desc: '仪表盘',
+        desc: "仪表盘",
         icon: <DashboardOutlined />,
-        routes: setPrefix('/admin', Dashboard)
+        routes: setPrefix("/admin", Dashboard)
       },
       {
-        path: '/admin/form',
+        path: "/admin/form",
         component: GroupRoute,
         level: 2,
-        desc: '表单页',
+        desc: "表单页",
         icon: <FormOutlined />,
-        routes: setPrefix('/admin', Form)
+        routes: setPrefix("/admin", Form)
       },
       {
-        path: '/admin/list',
+        path: "/admin/list",
         component: GroupRoute,
         level: 2,
-        desc: '列表页',
+        desc: "列表页",
         icon: <UnorderedListOutlined />,
-        routes: setPrefix('/admin', List)
+        routes: setPrefix("/admin", List)
       },
       {
-        path: '/admin/profile',
+        path: "/admin/profile",
         component: GroupRoute,
         level: 2,
-        desc: '详情页',
+        desc: "详情页",
         icon: <ProfileOutlined />,
-        routes: setPrefix('/admin', Profile)
+        routes: setPrefix("/admin", Profile)
       },
       {
-        path: '/admin/result',
+        path: "/admin/result",
         component: GroupRoute,
         level: 2,
-        desc: '结果页',
+        desc: "结果页",
         icon: <SmileOutlined />,
-        routes: setPrefix('/admin', Result)
+        routes: setPrefix("/admin", Result)
       },
       {
-        path: '/admin/exception',
+        path: "/admin/exception",
         component: GroupRoute,
         level: 2,
-        desc: '异常页',
+        desc: "异常页",
         icon: <ExceptionOutlined />,
-        routes: setPrefix('/admin', Exception)
+        routes: setPrefix("/admin", Exception)
       },
       {
-        path: '/admin/account',
+        path: "/admin/account",
         component: GroupRoute,
         level: 2,
-        desc: '个人页',
+        desc: "个人页",
         icon: <UserOutlined />,
-        routes: setPrefix('/admin', Account)
+        routes: setPrefix("/admin", Account)
       },
       {
-        path: '/admin/graph',
+        path: "/admin/graph",
         component: GroupRoute,
         level: 2,
-        desc: '图结构',
+        desc: "图结构",
         icon: <UserOutlined />,
-        routes: setPrefix('/admin', Graph)
+        routes: setPrefix("/admin", Graph)
       }
     ]
   },
   {
-    path: '/visitor',
-    component: React.lazy(() => import('./platform/VisitorRoute')),
+    path: "/visitor",
+    component: React.lazy(() => import("./platform/VisitorRoute")),
     level: 1,
-    desc: '游客平台',
+    desc: "游客平台",
     routes: []
   },
   {
-    path: '/login',
-    component: React.lazy(() => import('./LoginRoute')),
+    path: "/login",
+    component: React.lazy(() => import("./LoginRoute")),
     level: 1,
-    desc: '登录注册',
+    desc: "登录注册",
     routes: []
   },
-  { path: '/test', level: 1, desc: '测试', component: TestRoute, routes: [] },
-  { path: '*', level: 1, desc: '测试', component: TestRoute, routes: [] }
+  { path: "/test", level: 1, desc: "测试", component: TestRoute, routes: [] },
+  { path: "*", level: 1, desc: "测试", component: TestRoute, routes: [] }
 ]

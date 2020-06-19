@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Model, { ModelProps } from '../components/Model'
-import { Stack } from '@/utils/Stack'
+import React from "react"
+import ReactDOM from "react-dom"
+import Model, { ModelProps } from "../components/Model"
+import { Stack } from "@/utils/Stack"
 
 class ModelService {
   private modelStack: Stack<HTMLDivElement>
@@ -14,10 +14,10 @@ class ModelService {
    * @param config
    */
   open(config: ModelProps) {
-    const div = document.createElement('div') as HTMLDivElement
+    const div = document.createElement("div") as HTMLDivElement
     const top = this.modelStack.getTop()
     if (top) {
-      top.style.visibility = 'hidden'
+      top.style.visibility = "hidden"
     }
     ReactDOM.render(
       <Model
@@ -55,7 +55,7 @@ class ModelService {
   private restore() {
     const top = this.modelStack.getTop()
     if (top) {
-      top.style.visibility = 'visible'
+      top.style.visibility = "visible"
     }
   }
 }
