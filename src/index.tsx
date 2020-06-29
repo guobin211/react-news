@@ -12,7 +12,7 @@ import GroupRoute from "./components/GroupRoute"
 import { BrowserRouter } from "react-router-dom"
 
 const rootElement = document.getElementById("root") as HTMLElement
-ReactDOM.render(Loading, rootElement)
+ReactDOM.render(<Loading />, rootElement)
 
 appService
   .bootstrap()

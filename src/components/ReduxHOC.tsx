@@ -4,7 +4,7 @@
  * @Author GuoBin<guobin201314@gmail.com>
  * @Project react-news
  */
-import withAjax from "@/utils/with-ajax"
+import withAjax from "@/components/withAjax"
 import React from "react"
 import { BookVm } from "@/store/types/book.vm"
 import store from "@/store"

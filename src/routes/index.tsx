@@ -19,6 +19,7 @@ import { Exception } from "@/pages/exception"
 import TestRoute from "./TestRoute"
 import GroupRoute from "../components/GroupRoute"
 import Graph from "../pages/graph"
+import AdminRoute from "@/routes/platform/AdminRoute"
 
 export function setPrefix(father: string, routes: RouteConfig[]) {
   for (const route of routes) {
@@ -61,7 +62,7 @@ export interface RouteConfig {
 export const Routes: RouteConfig[] = [
   {
     path: "/admin",
-    component: React.lazy(() => import("./platform/AdminRoute")),
+    component: AdminRoute,
     level: 1,
     desc: "管理平台",
     routes: [
@@ -145,6 +146,5 @@ export const Routes: RouteConfig[] = [
     desc: "登录注册",
     routes: []
   },
-  { path: "/test", level: 1, desc: "测试", component: TestRoute, routes: [] },
-  { path: "*", level: 1, desc: "测试", component: TestRoute, routes: [] }
+  { path: "/test", level: 1, desc: "测试", component: TestRoute, routes: [] }
 ]

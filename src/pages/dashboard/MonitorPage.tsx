@@ -6,6 +6,6 @@ export interface MonitorPageState {}
 
 export default class MonitorPage extends React.Component<MonitorPageProps, MonitorPageState> {
   render() {
-    return <div className="MonitorPage">MonitorPage</div>
+    return <div className="bg">MonitorPage</div>
   }
 }

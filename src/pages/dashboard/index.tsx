@@ -1,9 +1,22 @@
 import React from "react"
+import Loadable from "react-loadable"
 import { RouteConfig } from "@/routes"
+import { LoaderConfig } from "@/pages/LoaderConfig"
 
-export const Analysis = React.lazy(() => import("./AnalysisPage"))
-export const Monitor = React.lazy(() => import("./MonitorPage"))
-export const Workplace = React.lazy(() => import("./WorkplacePage"))
+export const Analysis = Loadable({
+  loader: () => import("./AnalysisPage"),
+  ...LoaderConfig
+})
+
+export const Monitor = Loadable({
+  loader: () => import("./MonitorPage"),
+  ...LoaderConfig
+})
+
+export const Workplace = Loadable({
+  loader: () => import("./WorkplacePage"),
+  ...LoaderConfig
+})
 
 export const Dashboard: RouteConfig[] = [
   { path: "/dashboard/analysis", component: Analysis, level: 3, desc: "分析页" },
