@@ -6,7 +6,7 @@ a template for react, just play ~
 
 ## 启动流程
 
-![Rocket Redis](/.github/start.png)
+![React News](/.github/start.png)
 
 
 
