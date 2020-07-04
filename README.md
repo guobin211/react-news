@@ -6,7 +6,8 @@ a template for react, just play ~
 
 ## 启动流程
 
-[![AppStart](https://github.com/guobin211/react-news/blob/react-16/images/start.png)](https://github.com/guobin211/react-news)
+![Rocket Redis](/.github/start.png)
+
 
 
 ## 组织结构
@@ -27,7 +28,7 @@ a template for react, just play ~
 
 ## 预览
 
-[![React-Ui](https://github.com/guobin211/react-news/blob/react-16/images/react-ui.png)](https://github.com/guobin211/react-news)
+![Rocket Redis](/.github/react-ui.png)
 
 ## 注意类型声明
 
