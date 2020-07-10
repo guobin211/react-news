@@ -21,7 +21,7 @@ import GroupRoute from "../components/GroupRoute"
 import Graph from "../pages/graph"
 import AdminRoute from "@/routes/platform/AdminRoute"
 
-export function setPrefix(father: string, routes: RouteConfig[]) {
+export function setPrefix(father: string, routes: RouteConfig[]): RouteConfig[] {
   for (const route of routes) {
     route.path = father + route.path
     if (route.routes && route.routes.length > 0) {
@@ -31,7 +31,7 @@ export function setPrefix(father: string, routes: RouteConfig[]) {
   return routes
 }
 
-export function RouteWithSubRoutes(route: RouteConfig) {
+export function RouteWithSubRoutes(route: RouteConfig): JSX.Element {
   return <Route path={route.path} render={(props) => <route.component {...props} routes={route.routes} />} />
 }
 

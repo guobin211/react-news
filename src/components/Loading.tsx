@@ -3,7 +3,7 @@ import React from "react"
 /**
  * 静态loading
  */
-export const Loading = (props: any) => {
+export const Loading: React.FC = (props: any) => {
   return (
     <div className="center">
       <svg
