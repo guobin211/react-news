@@ -1,5 +1,10 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react"
 import classNames from "classnames"
+// 测试的时候加载
+// 生产环境打包成一个css文件
+if (process.env.NODE_ENV !== "production") {
+  require("./_style.css")
+}
 
 export type ButtonSize = "lg" | "sm"
 
