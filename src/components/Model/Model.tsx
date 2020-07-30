@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from "react"
-import "./styles/Model.less"
+import "./Model.less"
 import { Button } from "antd"
 import { stopEvent } from "@/utils"
 

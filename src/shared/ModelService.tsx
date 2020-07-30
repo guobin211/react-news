@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Model, { ModelProps } from "../components/Model"
+import Model, { ModelProps } from "../components/Model/Model"
 import { Stack } from "@/utils/Stack"
 
 class ModelService {
