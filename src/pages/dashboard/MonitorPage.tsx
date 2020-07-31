@@ -1,5 +1,7 @@
 import React from "react"
 import Button from "@/components/Button"
+import Menu from "@/components/Menu/Menu"
+import MenuItem from "@/components/Menu/MenuItem"
 
 export interface MonitorPageProps {}
 
@@ -13,6 +15,14 @@ export default class MonitorPage extends React.Component<MonitorPageProps, Monit
           <Button btnType="primary" size="lg">
             Button
           </Button>
+        </div>
+        <div>
+          <Menu defaultIndex={"1"}>
+            <MenuItem>11</MenuItem>
+            <MenuItem>22</MenuItem>
+            <MenuItem>33</MenuItem>
+            <MenuItem>44</MenuItem>
+          </Menu>
         </div>
       </div>
     )

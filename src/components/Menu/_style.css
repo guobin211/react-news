@@ -1,0 +1,18 @@
+.menu-ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 30px;
+  list-style: none;
+}
+.menu-item{
+  display: list-item;
+  cursor: pointer;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+}
+.is-active {
+  background-color: cornflowerblue;
+  color: #ffffff;
+}
