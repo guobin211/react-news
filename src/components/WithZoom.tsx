@@ -8,16 +8,12 @@
 import React, { useEffect } from "react"
 import Panzoom from "@panzoom/panzoom"
 
-export interface WithZoomProps {
-  children: any
-}
-
-const WithZoom = (props: WithZoomProps) => {
+const WithZoom: React.FC = (props) => {
   const refParent = React.createRef<HTMLDivElement>()
   const refChild = React.createRef<HTMLDivElement>()
   useEffect(() => {
     if (refParent.current && refChild.current) {
-      const panZoom = Panzoom(refChild.current as HTMLDivElement, {
+      const panZoom = Panzoom(refChild.current, {
         minScale: 1,
         maxScale: 5
       })
