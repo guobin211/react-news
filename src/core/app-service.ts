@@ -21,7 +21,7 @@ export class AppService {
     const local: AppState | undefined = localService.getData(LocalEnum.AppState)
     if (local) {
       if (local.version !== this.appState.version) {
-        this.updateApp()
+        AppService.updateApp()
       } else {
         Object.assign(this.appState, local)
       }
@@ -35,12 +35,12 @@ export class AppService {
   /**
    * 更新app
    */
-  private updateApp() {
+  private static updateApp() {
     localService.clear()
     localService.setDefault()
   }
 
-  bootstrap() {
+  bootstrap(): Promise<void> {
     return new Promise((resolve, reject) => {
       this.initLocalState()
       this.initRemoteState()

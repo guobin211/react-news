@@ -1,0 +1,72 @@
+.viking-upload-component {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 400px;
+  height: 200px;
+  border: 1px solid #f2f3f5;
+  border-radius: 5px; }
+  .viking-upload-component .viking-upload-input {
+    width: 400px;
+    height: 200px; }
+
+.viking-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.viking-uploader-drag {
+  background: #f8f9fa;
+  border: 1px dashed #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  width: 360px;
+  height: 180px;
+  text-align: center; }
+  .viking-uploader-drag:hover {
+    border: 1px dashed #0d6efd; }
+  .viking-uploader-drag.is-dragover {
+    border: 2px dashed #0d6efd;
+    background: rgba(13, 110, 253, 0.2); }
+
+.viking-upload-list-item {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  min-width: 200px;
+  position: relative; }
+  .viking-upload-list-item:first-child {
+    margin-top: 10px; }
+  .viking-upload-list-item .file-name {
+    margin-left: 5px;
+    margin-right: 40px; }
+    .viking-upload-list-item .file-name svg {
+      margin-right: 5px;
+      color: #adb5bd; }
+  .viking-upload-list-item .file-name-error {
+    color: #dc3545; }
+    .viking-upload-list-item .file-name-error svg {
+      color: #dc3545; }
+  .viking-upload-list-item .file-status {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    line-height: inherit; }
+  .viking-upload-list-item .file-actions {
+    display: none;
+    position: absolute;
+    right: 7px;
+    top: 0;
+    line-height: inherit;
+    cursor: pointer; }
+  .viking-upload-list-item:hover {
+    background-color: #e9ecef; }
+    .viking-upload-list-item:hover .file-status {
+      display: none; }
+    .viking-upload-list-item:hover .file-actions {
+      display: block; }
