@@ -72,13 +72,16 @@ function withSubscription<T>(WrapComponent: ReactComponent, selectData: SelectFn
   return WithSubscription
 }
 
+interface WithDataProps<T = any> {
+  data: T[]
+}
 /**
  * view视图组件
  */
-class CommentList extends React.Component<any, any> {
+class CommentList extends React.Component<WithDataProps<string>> {
   render() {
     return this.props.data
-      ? this.props.data.map((s: string, index: number) => {
+      ? this.props.data.map((s, index) => {
           return (
             <p style={{ color: "red" }} key={index}>
               {s}
@@ -89,10 +92,10 @@ class CommentList extends React.Component<any, any> {
   }
 }
 
-class BlogList extends React.Component<any, any> {
+class BlogList extends React.Component<WithDataProps<string>> {
   render() {
     return this.props.data
-      ? this.props.data.map((s: any, index: number) => {
+      ? this.props.data.map((s, index) => {
           return (
             <p style={{ color: "darkblue" }} key={index}>
               {s}

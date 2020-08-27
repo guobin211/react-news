@@ -25,7 +25,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   }
 
   const renderChildren = () => {
-    return React.Children.map(children, (child, index) => {
+    return React.Children.map(children, (child: any, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>
       const { displayName } = childElement.type
       if (displayName === "MenuItem" || displayName === "SubMenu") {
